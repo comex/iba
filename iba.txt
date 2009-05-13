@@ -1,5 +1,55 @@
 ===============================================================================
 
+Industrial Bank & Agora Report
+Date of this report: <insert>
+Date of last report: <insert>
+
+President of the IBA: comex
+
+===============================================================================
+
+Current Holdings:
+
+
+Nickname                     zm
+---------------------------------
+Arnold Bros (est. 1905)      0
+
+===============================================================================
+
+Current Rates:
+
+asset       rate (zm)
+
+0 Crop      11
+1 Crop      11
+2 Crop      45
+3 Crop      21
+4 Crop      23
+5 Crop      27
+6 Crop      50
+7 Crop      19
+8 Crop      12
+9 Crop      11
+WRV         130
+--
+C  Credit   75
+C# Credit   214
+D  Credit   80
+D# Credit   188
+E  Credit   57
+F  Credit   141
+F# Credit   96
+G  Credit   173
+G# Credit   69
+A  Credit   100
+A# Credit   125
+B  Credit   214
+
+**Credit = Note Credit
+
+===============================================================================
+
 I. IBA
 
 This is the Industrial Bank & Agora.  The currency of the IBA is
@@ -228,39 +278,5 @@ XV. Presidential Restriction
 The President, when performing actions allowed to em by virtue of the
 office, SHALL act in good faith, considering the best interests of
 this contract and the game.
-
-XVI. Initial Rates
-
-When this contract is formed, the following Rate List is effected,
-then this section repeals itself:
-
-asset       rate (zm)
-
-0 Crop      11
-1 Crop      11
-2 Crop      45
-3 Crop      21
-4 Crop      23
-5 Crop      27
-6 Crop      50
-7 Crop      19
-8 Crop      12
-9 Crop      11
-WRV         130
---
-C  Credit   75
-C# Credit   214
-D  Credit   80
-D# Credit   188
-E  Credit   57
-F  Credit   141
-F# Credit   96
-G  Credit   173
-G# Credit   69
-A  Credit   100
-A# Credit   125
-B  Credit   214
-
-**Credit = Note Credit
 
 ===============================================================================
