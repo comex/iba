@@ -1,0 +1,266 @@
+===============================================================================
+
+I. IBA
+
+This is the Industrial Bank & Agora.  The currency of the IBA is
+zorkmids (zm); the recordkeepor of zorkmids is the President.
+
+Any person CAN join this contract by announcement.  Any party to this
+contract CAN leave it by announcement, unless e is involved in a
+pending Offer.
+
+The President of the IBA is comex.
+
+II. Summary
+
+- You can join the contract by announcement.  Please join before
+  attempting to make Offers or vote ISELL-- your only obligations are
+  to uphold the terms of Offers you make.
+
+- You can deposit 4 assets per week for the standard rate; further
+  deposits give you diminishing returns to prevent scams, but you can
+  still get a good price for up to 10.
+
+- You can always withdraw assets for the standard rate.
+
+- You can intend to sell or buy assets, naming a price; this is known
+  as an Offer, and other parties can fill the Offer by announcement.
+
+- ISELL works like SELL, but you can vote ISELL on dependent
+  actions as well as decisions.
+
+III. Banking
+
+Every asset has a Rate in zorkmids, intially zero.  The President's report
+includes a Rate List containing all nonzero Rates.
+
+IV. Withdrawal
+
+A person CAN withdraw an asset in the IBA's possession if e has at
+least its Rate in zorkmids; those zorkmids are destroyed in eir
+possession and the IBA transfers the asset to em.
+
+V. Deposits
+
+A person CAN deposit an asset by transferring it to the IBA; e then
+gains the Effective Rate in zorkmids.
+
+The Effective Rate for a deposit is its Rate, multiplied by a value
+depending on the number of previous deposits made in the same week
+with the same Executor, and rounded to the nearest integer:
+
+prev    rate
+
+0-3     1.00
+4-6     0.90
+7-9     0.80
+10      0.73
+11      0.62
+12      0.50
+13      0.38
+14      0.26
+15      0.18
+16      0.12
+17      0.08
+18      0.05
+19      0.03
+20      0.01
+21-     0.00
+
+VI. Offers
+
+An Offer is an entity with three fields:
+  Selling:   (a nonempty list of assets and/or actions)
+  For cost:  (a nonempty list of assets and/or actions)
+  Repeats:   (a nonnegative integer, or infinity; default 1)
+
+A person CAN create an Offer by announcement, thus becoming its
+offerer.  A person CAN destroy an Offer for which e is the offerer by
+announcement.
+
+A party (the filler) CAN fill an Offer by announcement if and only if:
+ - the offerer is a party, and
+ - the offerer has the assets in the 'Selling' field (if any), and CAN
+   perform the actions in that field (if any), and
+ - the filler has the assets in the 'For cost' field (if any), and CAN
+   perform the actions in that field (if any).
+
+When an Offer is filled,
+- the IBA acts on behalf of the offerer to transfer the assets in the
+  'Selling' field to the filler, and to take the actions in the
+  'Selling' field, and
+- the IBA acts on behalf of the filler to transfer the assets in the
+  'For cost' field to the offerer, and to take the actions in the 'For
+  cost' field, and
+- the Offer's 'Repeats' field is decreased by one.
+
+An Offer with zero Repeats is automatically destroyed.
+
+To intend to sell X for Y is to create an Offer with X as 'Selling'
+and Y as 'For cost'; to intend to buy X for Y is to create an Offer
+with X as 'For cost' and Y as 'Selling'; to intend to sell A*X for Y
+each is to create an Offer with X as 'Selling', Y as 'For cost', and A
+as 'Repeats'; etc.
+
+Examples:
+- I intend to sell a WRV for 8 zm.
+- I intend to sell 4 G# Credits for 2 zm each.
+- I intend buy a Land for 3 zm.
+- I intend to sell a WRV for a Land.
+
+VII. Selling Votes
+
+Voting ISELL(X) on a decision is equivalent to intending to sell a
+number of votes equal to your voting limit on that decision for X.
+
+Voting ISELL(X - A*Y) on a decision (A equals one if not specified) is
+equivalent to intending to sell A votes on that decision for X, and
+then voting A*Y.
+
+Examples:
+- ISELL(8 zm)              - allow all of your votes to be
+                             purchased as a block for 8 zm
+
+- ISELL(8 zm - AGAINST*8)  - cast 8 AGAINST votes, which can be purchased
+                             as a block for 8 zm
+
+- 8*ISELL(1 zm)            - allow each of your votes to be purchased
+                             separately for 1 zm each
+
+- 8*ISELL(1 zm - AGAINST)  - cast 8 AGAINST votes, each of which can
+                             be purchased separately for 1 zm
+
+When an Offer is filled that specifies a number of votes on a certain
+Agoran decision in the 'Selling' or 'For cost' field, the offerer or
+filler respectively
+- retracts enough (if any) of eir ballots on that decision that the
+  following ballots are valid and do not exceed eir voting limit;
+- casts the specified number of ballots with the option specified by
+  the other party; and
+- SHALL NOT retract these ballots.
+
+If this process is impossible, the Offer CANNOT be filled.
+Retractions of ballots caused by this process are performed in the
+order the ballots were originally submitted.
+
+VIII. Selling Support/Objection
+
+Opining ISELL(X) on an intent to perform a dependent action is
+equivalent to intending to sell an opinion on that action for X.
+
+Opining ISELL(X - Y) on an intent to perform a dependent action is
+equivalent to intending to sell an opinion on that action for X, and
+then opining Y.
+
+Examples:
+- ISELL(4 zm)
+- ISELL(4 zm - support)
+- ISELL(4 zm - object)
+
+When an Offer is filled that specifies an opinion on a certain
+dependent action in the 'Selling' or 'For cost' field, the offerer or
+filler respectively
+- withdraws all previous support or objection for that action,
+- supports or objects to that action, as specified by the other party, and
+- SHALL NOT withdraw that support or objection, or thereafter support
+  or object to that action.
+
+This process also applies to contract-defined psuedo-dependent
+actions whose behavior differs from that of a dependent action only in
+the values of time limits, or not at all.
+
+IX. Selling Agreement
+
+When an Offer is filled that specifies agreement to certain terms in
+the 'Selling' or 'For cost' field, the offerer or filler respectively
+SHALL follow those terms.
+
+X. Motions
+
+A motion is an entity which acts identically to an Agoran decision,
+except that the requirement that the voting period last at least seven
+days is waived, and, by default, the eligible voters are the parties
+to this contract, each eligible voter's voting limit is one, and the
+voting period lasts 72 hours.
+
+Any party CAN initiate a Motion to Amend, specifying a set of
+amendments to this contract.  For this motion, the adoption index is 2.
+If the option selected on a Motion to Amend is ADOPTED, this contract
+is amended as specified.
+
+XI. Changing the Rates
+
+A Rate List is a list of assets and associated Rates.  To effect a
+Rate List is to set the Rate of each asset in the list to the
+specified value.
+
+The President CAN effect a Rate List without two objections in 48
+hours.  Any party CAN initiate a Motion to Effect, specifying a Rate
+List.  For this motion, the adoption index is 1.  If the option
+selected on a Motion to Effect is ADOPTED, the specified Rate List is
+effected.
+
+XII. Rates are Self-Ratifying
+
+One week after the publication of a Rate List purporting to be part of
+the President's report, the Rate List is effected unless, less than a
+week after its publication, any person publicly
+- challenged the Rate List's veracity, or
+- purported to effect a different Rate List.
+
+XIII. The IBA is a Partnership
+
+Parties to this contract SHALL collectively ensure it fulfills its
+legal obligations.  If the Sentiment of this contract is ever not
+Legalistic, any person CAN flip it to Legalistic by announcement.  If
+the Disclosure of this contract is ever not Public, any person CAN
+flip it to Public by announcement including its text and list of
+parties.
+
+XIV. Pending Offers
+
+A person is involved in an Offer if e is its offerer or filler.  A
+pending Offer is an Offer whose effects impose an ongoing or
+unsatisfied obligation on a person involved in it.
+
+XV. Presidential Restriction
+
+The President, when performing actions allowed to em by virtue of the
+office, SHALL act in good faith, considering the best interests of
+this contract and the game.
+
+XVI. Initial Rates
+
+When this contract is formed, the following Rate List is effected,
+then this section repeals itself:
+
+asset       rate (zm)
+
+0 Crop      11
+1 Crop      11
+2 Crop      45
+3 Crop      21
+4 Crop      23
+5 Crop      27
+6 Crop      50
+7 Crop      19
+8 Crop      12
+9 Crop      11
+WRV         130
+--
+C  Credit   75
+C# Credit   214
+D  Credit   80
+D# Credit   188
+E  Credit   57
+F  Credit   141
+F# Credit   96
+G  Credit   173
+G# Credit   69
+A  Credit   100
+A# Credit   125
+B  Credit   214
+
+**Credit = Note Credit
+
+===============================================================================
