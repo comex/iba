@@ -13,7 +13,13 @@ Current Holdings:
 
 Nickname                     zm
 ---------------------------------
-Arnold Bros (est. 1905)      0
+*BobTHJ                      0
+*comex                       0
+*coppro                      0
+
+* IBA party
+
+All IBA parties are listed.  All other persons have no zm.
 
 ===============================================================================
 
@@ -49,6 +55,8 @@ B  Credit   214
 **Credit = Note Credit
 
 ===============================================================================
+
+Text of the contract:
 
 I. IBA
 
