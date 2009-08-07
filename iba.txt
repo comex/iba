@@ -10,12 +10,14 @@ President of the IBA: comex
 
 Current Holdings:
 
-
 Nickname                     zm
 ---------------------------------
 *BobTHJ                      0
 *comex                       0
 *coppro                      0
+*Pavitra                     623
+*Tiger                       130
+*woggle                      91
 
 * IBA party
 
@@ -25,18 +27,19 @@ All IBA parties are listed.  All other persons have no zm.
 
 Current Rates:
 
-asset       rate (zm)
-
-0 Crop      11
-1 Crop      11
+asset       rate (zm)    # in bank
+---------------------------------
+0 Crop      11            3
+1 Crop      11            6
 2 Crop      45
-3 Crop      21
-4 Crop      23
+3 Crop      21            2
+4 Crop      23            1
 5 Crop      27
-6 Crop      50
-7 Crop      19
+6 Crop      50            4
+7 Crop      19            3
 8 Crop      12
-9 Crop      11
+9 Crop      11            12
+X Crop      100           8
 WRV         130
 --
 C  Credit   75
@@ -56,6 +59,18 @@ B  Credit   214
 
 ===============================================================================
 
+History:
+
+03 June 2009 02:44:03   Pavitra +623zm (0c, 7*1c, 2*3c, 2*4c, 2*5c,
+                        2*6c, 7c, 3*8c, 13*9c, 4*Xc)
+14 June 2009 19:37:25   woggle +200zm (4*6c)
+                               -109zm (2*5c, 7c, 3*8c)
+14 June 2009 20:13:55   Tiger +275zm (2*Xc, 3*7c, 2*0c)
+                              -145zm (1c, 4c, 2*6c, 9c)
+
+
+===============================================================================
+
 Text of the contract:
 
 I. IBA
@@ -65,7 +80,8 @@ zorkmids (zm); the recordkeepor of zorkmids is the President.
 
 Any person CAN join this contract by announcement.  Any party to this
 contract CAN leave it by announcement, unless e is involved in a
-pending Offer.
+pending Offer, or this contract has less than three parties, in which
+case any party CAN dissolve it without objection.
 
 The President of the IBA is comex.
 
@@ -237,14 +253,24 @@ X. Motions
 
 A motion is an entity which acts identically to an Agoran decision,
 except that the requirement that the voting period last at least seven
-days is waived, and, by default, the eligible voters are the parties
-to this contract, each eligible voter's voting limit is one, and the
-voting period lasts 72 hours.
+days is waived, and, by default:
+* the eligible voters are the parties to this contract,
+* each eligible voter's voting limit is one,
+* the voting period lasts 72 hours,
+* the vote collector is the President, and
+* the vote collector SHALL resolve it as soon as possible after the
+  voting period ends.
 
-Any party CAN initiate a Motion to Amend, specifying a set of
-amendments to this contract.  For this motion, the adoption index is 2.
-If the option selected on a Motion to Amend is ADOPTED, this contract
-is amended as specified.
+Any party CAN initiate a Motion to Act, specifying a set of actions to
+be performed by this contract.  For this motion, the adoption index is 2.
+If the option selected on a Motion to Act is ADOPTED, the vote
+collector CAN once act on behalf of this contract to perform those
+actions, and the Motion CANNOT be resolved unless the vote collector
+does so in the same message, immediately after resolving it.
+
+Submitting a Motion to Amend with a set of amendments to this contract
+is equivalent to submitting a Motion to Act specifying that this
+contract make those amendments to itself.
 
 XI. Changing the Rates
 
@@ -284,7 +310,7 @@ unsatisfied obligation on a person involved in it.
 XV. Presidential Restriction
 
 The President, when performing actions allowed to em by virtue of the
-office, SHALL act in good faith, considering the best interests of
+position, SHALL act in good faith, considering the best interests of
 this contract and the game.
 
 ===============================================================================
