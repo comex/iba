@@ -1,9 +1,82 @@
-** The IBA is now a player.  It is now possible to deposit zorkmids.
+Alright.  I've been slacking with the IBA, but I believe that its
+purpose is much better fulfilled with the multitude of cards that are
+now available for trade.  I for one already want to trade cards I
+don't want for those I do, and there's no reason the IBA can't satisfy
+this purpose.
+
+I pledge that in the future, I won't be so haphazard regarding
+reports.  Instead, I will set the weekly report as a cronjob, like the
+ruleset; however, like the ruleset, it may in the future be slightly
+out of date at the time of publication.  I will indicate the time of
+last update with future reports.
+
+--
+
+Reposting this amendment, which failed quorum before.
+
+I initiate a Motion to Amend, specifying the following amendment (in
+diff format).  The eligible voters are the parties to the IBA, the
+options are FOR, AGAINST, and PRESENT, and I am the vote collector.  I
+vote FOR the Motion to Amend.
+
+@@ -256,6 +255,7 @@
+ days is waived, and, by default:
+ * the eligible voters are the parties to this contract,
+ * each eligible voter's voting limit is one,
++* quorum is three,
+ * the voting period lasts 72 hours,
+ * the vote collector is the President, and
+ * the vote collector SHALL resolve it as soon as possible after the
+
+--
+
+Fix the offer system.
+
+I initiate a Motion to Amend, specifying the following amendment (in
+diff format).  The eligible voters are the parties to the IBA, the
+options are FOR, AGAINST, and PRESENT, and I am the vote collector.  I
+vote FOR the Motion to Amend.
+
+@@ -152,20 +152,18 @@ A person CAN create an Offer by announcement, thus becoming its
+ offerer.  A person CAN destroy an Offer for which e is the offerer by
+ announcement.
+ 
+-A party (the filler) CAN fill an Offer by announcement if and only if:
+- - the offerer is a party, and
+- - the offerer has the assets in the 'Selling' field (if any), and CAN
+-   perform the actions in that field (if any), and
+- - the filler has the assets in the 'For cost' field (if any), and CAN
+-   perform the actions in that field (if any).
+-
+-When an Offer is filled,
+-- the IBA acts on behalf of the offerer to transfer the assets in the
+-  'Selling' field to the filler, and to take the actions in the
+-  'Selling' field, and
+-- the IBA acts on behalf of the filler to transfer the assets in the
+-  'For cost' field to the offerer, and to take the actions in the 'For
+-  cost' field, and
++A party (the filler) generally CAN fill an Offer by announcement (and
++is authorized to act on behalf of the offerer for this purpose) if the
++offerer is a party.  Filling an Offer is equivalent to performing the
++following procedure in order, with no other actions inserted between
++the start and end of the procedure; and notwithstanding the previous
++sentence, if the procedure would not be entirely successful, the Offer
++cannot be filled at all:
++
++- the filler acts on behalf of the offerer to transfer the assets in the
++'Selling' field to the filler, and to take the actions in the 'Selling' field, and
++- the filler transfers the assets in the 'For cost' field to the offerer, and
++takes the actions in the 'For cost' field, and
+ - the Offer's 'Repeats' field is decreased by one.
+ 
+ An Offer with zero Repeats is automatically destroyed.
 
 ===============================================================================
 
 Industrial Bank & Agora Report
-Date of this report: 11 August 2009
+Date of this report: 7 August 2009
+Date of last report: 17 June 2009
+Accurate as of:      7 August 2009 20:24:50
 
 President of the IBA: comex
 
@@ -13,9 +86,10 @@ Current Holdings:
 
 Nickname                     zm
 ---------------------------------
-*BobTHJ                      220
-*comex                       320
+*BobTHJ                      0
+*comex                       0
 *coppro                      0
+*C-walker                    0
 *Pavitra                     623
 *Tiger                       130
 *woggle                      91
@@ -28,32 +102,69 @@ All IBA parties are listed.  All other persons have no zm.
 
 Current Rates:
 
+asset       rate (zm)    # in bank
+---------------------------------
+0 Crop      11            3
+1 Crop      11            6
+2 Crop      45
+3 Crop      21            2
+4 Crop      23            1
+5 Crop      27
+6 Crop      50            4
+7 Crop      19            3
+8 Crop      12
+9 Crop      11            12
+X Crop      100           8
+WRV         130
+--
+C  Credit   75
+C# Credit   214
+D  Credit   80
+D# Credit   188
+E  Credit   57
+F  Credit   141
+F# Credit   96
+G  Credit   173
+G# Credit   69
+A  Credit   100
+A# Credit   125
+B  Credit   214
+
+**Credit = Note Credit
+
+===============================================================================
+
+New Rates:
+
+I intend, without two objections in 48 hours, to effect the following
+Rate List.
+
 asset           rate (zm)    # in bank
 -------------------------------------
 
 -- AAA
 0 Crop          11            3
-1 Crop          11            2
+1 Crop          11            6
 2 Crop          45
-3 Crop          21
+3 Crop          21            2
 4 Crop          23            1
-5 Crop          27            2
-6 Crop          50            9
-7 Crop          19            1
-8 Crop          12            1
-9 Crop          11            8
-X Crop          100           9
+5 Crop          27
+6 Crop          50            4
+7 Crop          19            3
+8 Crop          12
+9 Crop          11            12
+X Crop          100           8
 WRV             130
 
 -- Cards (Government)
-Roll Call       20            1
-Debate-o-Matic  20            1
-Arm-twist       45            1
-On the Nod      45            1
+Roll Call       20
+Debate-o-Matic  20
+Arm-twist       45
+On the Nod      45
 Kill Bill       110
 Lobbyist        110
-Local Election  110           2 
-No Confidence   55            1
+Local Election  110
+No Confidence   55
 
 -- Cards (Change)
 Distrib-u-Matic 20
@@ -64,7 +175,7 @@ Not Your Turn   250
 
 -- Cards (Justice)
 Absolv-o-Matic  45
-Stool Pigeon    40
+Stool Pigeon    40   
 Drop your Wea.. 80
 Discard Picking 170
 
@@ -81,11 +192,6 @@ History:
 14 June 2009 20:13:55   Tiger +275zm (2*Xc, 3*7c, 2*0c)
                               -145zm (1c, 4c, 2*6c, 9c)
 
-16 August 2009 15:51:29 BobTHJ +108zm (6c, 5c, 7c, 8c)
-
-19 August 2009 04:07:40 BobTHJ +27zm (5c)
-21 August 2009 03:47:29 comex +320zm (2*LE, NC, OtN)
-21 August 2009 22:43:29 BobTHJ +85zm (RC, DoM, At)
 
 ===============================================================================
 
@@ -129,10 +235,8 @@ includes a Rate List containing all nonzero Rates.
 IV. Withdrawal
 
 A person CAN withdraw an asset in the IBA's possession if e has at
-least its Rate in zorkmids.  Withdrawing an asset is equivalent to
-acting on behalf of the IBA to transfer the asset to the withdrawer;
-after a person withdraws an asset, its Rate in zorkmids is destroyed
-in eir possession.
+least its Rate in zorkmids; those zorkmids are destroyed in eir
+possession and the IBA transfers the asset to em.
 
 V. Deposits
 
@@ -172,18 +276,20 @@ A person CAN create an Offer by announcement, thus becoming its
 offerer.  A person CAN destroy an Offer for which e is the offerer by
 announcement.
 
-A party (the filler) generally CAN fill an Offer by announcement (and
-is authorized to act on behalf of the offerer for this purpose) if the
-offerer is a party.  Filling an Offer is equivalent to performing the
-following procedure in order, with no other actions inserted between
-the start and end of the procedure; and notwithstanding the previous
-sentence, if the procedure would not be entirely successful, the Offer
-cannot be filled at all:
+A party (the filler) CAN fill an Offer by announcement if and only if:
+ - the offerer is a party, and
+ - the offerer has the assets in the 'Selling' field (if any), and CAN
+   perform the actions in that field (if any), and
+ - the filler has the assets in the 'For cost' field (if any), and CAN
+   perform the actions in that field (if any).
 
-- the filler acts on behalf of the offerer to transfer the assets in the
-'Selling' field to the filler, and to take the actions in the 'Selling' field, and
-- the filler transfers the assets in the 'For cost' field to the offerer, and
-takes the actions in the 'For cost' field, and
+When an Offer is filled,
+- the IBA acts on behalf of the offerer to transfer the assets in the
+  'Selling' field to the filler, and to take the actions in the
+  'Selling' field, and
+- the IBA acts on behalf of the filler to transfer the assets in the
+  'For cost' field to the offerer, and to take the actions in the 'For
+  cost' field, and
 - the Offer's 'Repeats' field is decreased by one.
 
 An Offer with zero Repeats is automatically destroyed.
@@ -274,7 +380,6 @@ except that the requirement that the voting period last at least seven
 days is waived, and, by default:
 * the eligible voters are the parties to this contract,
 * each eligible voter's voting limit is one,
-* quorum is three,
 * the voting period lasts 72 hours,
 * the vote collector is the President, and
 * the vote collector SHALL resolve it as soon as possible after the
