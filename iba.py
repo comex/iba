@@ -10,7 +10,8 @@ for bit in bits:
     for ast, val in m:
         rates[ast.strip()] = float(val.strip())
 
-desc = '1 0 Crop, 7 1 Crop, 0 2 Crop, 2 3 Crop, 2 4 Crop, 2 5 Crop, 2 6 Crop, 1 7 Crop, 4 8 Crop, 13 9 Crop, 4 X Crop'
+desc = '10 0 Crop, 9 3 Crop, 2 Arm-twist, 2 Committee, 1 On the Nod, 1 Roll Call'
+#desc = '1 0 Crop, 7 1 Crop, 0 2 Crop, 2 3 Crop, 2 4 Crop, 2 5 Crop, 2 6 Crop, 1 7 Crop, 4 8 Crop, 13 9 Crop, 4 X Crop'
 #desc = '2 X Crop, 3 7 Crop, 2 0 Crop'
 
 asts = []
@@ -21,7 +22,7 @@ for ast in desc.split(', '):
 prev = 0
 gain = 0
 log = ''
-for ast in sorted(asts, reverse=True, key=lambda x: rates[x]):
+for ast in asts:#sorted(asts, reverse=True, key=lambda x: rates[x]):
     log += 'prev=%d\tdeposit %s\t\t' % (prev, ast)
     if prev <= 20:
         x = round(rates[ast] * muls[prev])

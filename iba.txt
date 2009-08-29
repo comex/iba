@@ -1,9 +1,7 @@
-** The IBA is now a player.  It is now possible to deposit zorkmids.
-
 ===============================================================================
 
 Industrial Bank & Agora Report
-Date of this report: 11 August 2009
+Date of this report: 29 August 2009
 
 President of the IBA: comex
 
@@ -13,12 +11,14 @@ Current Holdings:
 
 Nickname                     zm
 ---------------------------------
-*BobTHJ                      220
+*BobTHJ                      170
 *comex                       320
-*coppro                      0
+*coppro                      130
+*C-walker                    135
+*Murphy                      270
 *Pavitra                     623
-*Tiger                       130
-*woggle                      91
+*Tiger                       117
+*woggle                      368
 
 * IBA party
 
@@ -32,40 +32,40 @@ asset           rate (zm)    # in bank
 -------------------------------------
 
 -- AAA
-0 Crop          11            3
+0 Crop          11            13
 1 Crop          11            2
 2 Crop          45
-3 Crop          21
-4 Crop          23            1
-5 Crop          27            2
-6 Crop          50            9
-7 Crop          19            1
-8 Crop          12            1
+3 Crop          21            9
+4 Crop          23
+5 Crop          27
+6 Crop          50            7
+7 Crop          19            4
+8 Crop          12
 9 Crop          11            8
-X Crop          100           9
-WRV             130
+X Crop          100           12
+WRV             130           1
 
 -- Cards (Government)
-Roll Call       20            1
+Roll Call       20            6
 Debate-o-Matic  20            1
-Arm-twist       45            1
-On the Nod      45            1
+Arm-twist       45            3
+On the Nod      45            2
 Kill Bill       110
-Lobbyist        110
+Lobbyist        110           1
 Local Election  110           2 
 No Confidence   55            1
 
 -- Cards (Change)
 Distrib-u-Matic 20
-Committee       23
+Committee       23            2
 Your Turn       25
 Presto!         115
 Not Your Turn   250
 
 -- Cards (Justice)
-Absolv-o-Matic  45
+Absolv-o-Matic  45            3 
 Stool Pigeon    40
-Drop your Wea.. 80
+Drop your Wea.. 80            2
 Discard Picking 170
 
 * Drop your Wea.. = Drop your Weapon
@@ -85,7 +85,18 @@ History:
 
 19 August 2009 04:07:40 BobTHJ +27zm (5c)
 21 August 2009 03:47:29 comex +320zm (2*LE, NC, OtN)
+21 August 2009 20:34:19 coppro +130zm (WRV)
+21 August 2009 20:37:14 BobTHJ -130zm (WRV)
 21 August 2009 22:43:29 BobTHJ +85zm (RC, DoM, At)
+22 August 2009 15:01:09 C-walker +135zm (3*AoM)
+23 August 2009 21:49:09 woggle +300zm (3*Xc)
+                               -23zm (8c, 7c)
+25 August 2009 20:18:10 Tiger +164zm (10*0c, 9*3c, 2*At, 2*Com, OtN,
+                        RC)
+25 August 2009 20:30:10 Tiger +0zm (4*7c)
+                              -177zm (2*6c, 2*5c, 4c)
+27 August 2009 07:21:10 Murphy +270zm (Lob, 2*DyW)
+28 August 2009 22:00:11 BobTHJ +80zm (4*RC)
 
 ===============================================================================
 
