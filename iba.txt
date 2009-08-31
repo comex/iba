@@ -17,8 +17,8 @@ Nickname                     zm
 *C-walker                    135
 *Murphy                      270
 *Pavitra                     623
-*Tiger                       117
-*woggle                      368
+*Tiger                       377
+*woggle                      360
 
 * IBA party
 
@@ -43,7 +43,7 @@ asset           rate (zm)    # in bank
 8 Crop          12
 9 Crop          11            8
 X Crop          100           12
-WRV             130           1
+WRV             130           2
 
 -- Cards (Government)
 Roll Call       20            6
@@ -54,49 +54,62 @@ Kill Bill       110
 Lobbyist        110           1
 Local Election  110           2 
 No Confidence   55            1
+Goverment Ball  500
 
 -- Cards (Change)
-Distrib-u-Matic 20
-Committee       23            2
-Your Turn       25
-Presto!         115
+Distrib-u-Matic 25
+Committee       30            2
+Your Turn       30
+Presto!         150
 Not Your Turn   250
+Supersize Me    30
+Shrink Potion   50
+Change Ball     500
 
 -- Cards (Justice)
 Absolv-o-Matic  45            3 
 Stool Pigeon    40
 Drop your Wea.. 80            2
-Discard Picking 170
+Discard Picking 130
+Justice Ball    500
+Penalty Box     175
 
 * Drop your Wea.. = Drop your Weapon
+
+-- misc
+
+X Point         15
+Y Point         15
+Medal           1500
 
 ===============================================================================
 
 History:
 
-03 June 2009 02:44:03   Pavitra +623zm (0c, 7*1c, 2*3c, 2*4c, 2*5c,
-                        2*6c, 7c, 3*8c, 13*9c, 4*Xc)
-14 June 2009 19:37:25   woggle +200zm (4*6c)
-                               -109zm (2*5c, 7c, 3*8c)
-14 June 2009 20:13:55   Tiger +275zm (2*Xc, 3*7c, 2*0c)
-                              -145zm (1c, 4c, 2*6c, 9c)
+03 June 2009 02:44:03      Pavitra +623zm (0c, 7*1c, 2*3c, 2*4c, 2*5c,
+                                           2*6c, 7c, 3*8c, 13*9c, 4*Xc)
+14 June 2009 19:37:25      woggle +200zm (4*6c)
+                                  -109zm (2*5c, 7c, 3*8c)
+14 June 2009 20:13:55      Tiger +275zm (2*Xc, 3*7c, 2*0c)
+                                 -145zm (1c, 4c, 2*6c, 9c)
 
-16 August 2009 15:51:29 BobTHJ +108zm (6c, 5c, 7c, 8c)
+16 August 2009 15:51:29    BobTHJ +108zm (6c, 5c, 7c, 8c)
 
-19 August 2009 04:07:40 BobTHJ +27zm (5c)
-21 August 2009 03:47:29 comex +320zm (2*LE, NC, OtN)
-21 August 2009 20:34:19 coppro +130zm (WRV)
-21 August 2009 20:37:14 BobTHJ -130zm (WRV)
-21 August 2009 22:43:29 BobTHJ +85zm (RC, DoM, At)
-22 August 2009 15:01:09 C-walker +135zm (3*AoM)
-23 August 2009 21:49:09 woggle +300zm (3*Xc)
-                               -23zm (8c, 7c)
-25 August 2009 20:18:10 Tiger +164zm (10*0c, 9*3c, 2*At, 2*Com, OtN,
-                        RC)
-25 August 2009 20:30:10 Tiger +0zm (4*7c)
-                              -177zm (2*6c, 2*5c, 4c)
-27 August 2009 07:21:10 Murphy +270zm (Lob, 2*DyW)
-28 August 2009 22:00:11 BobTHJ +80zm (4*RC)
+19 August 2009 04:07:40    BobTHJ +27zm (5c)
+21 August 2009 03:47:29    comex +320zm (2*LE, NC, OtN)
+21 August 2009 20:34:19    coppro +130zm (WRV)
+21 August 2009 20:37:14    BobTHJ -130zm (WRV)
+21 August 2009 22:43:29    BobTHJ +85zm (RC, DoM, At)
+22 August 2009 15:01:09    C-walker +135zm (3*AoM)
+23 August 2009 21:49:09    woggle +300zm (3*Xc)
+                                  -31zm (8c, 7c)
+25 August 2009 20:18:10    Tiger +164zm (10*0c, 9*3c, 2*At, 2*Com,
+                                         OtN, RC)
+25 August 2009 20:30:10    Tiger +0zm (4*7c)
+                                 -177zm (2*6c, 2*5c, 4c)
+27 August 2009 07:21:10    Murphy +270zm (Lob, 2*DyW)
+28 August 2009 22:00:11    BobTHJ +80zm (4*RC)
+31 August 2009 20:42:11    Tiger +260zm (2*WRV)
 
 ===============================================================================
 
