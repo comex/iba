@@ -11,13 +11,13 @@ Current Holdings:
 
 Nickname                     zm
 ---------------------------------
-*BobTHJ                      170
-*comex                       320
-*coppro                      130
+*BobTHJ                      182
 *C-walker                    135
 *Murphy                      270
 *Pavitra                     623
 *Tiger                       377
+*comex                       320
+*coppro                      130
 *woggle                      360
 
 * IBA party
@@ -40,7 +40,7 @@ asset           rate (zm)    # in bank
 5 Crop          27
 6 Crop          50            7
 7 Crop          19            4
-8 Crop          12
+8 Crop          12            1
 9 Crop          11            8
 X Crop          100           12
 WRV             130           2
@@ -52,35 +52,23 @@ Arm-twist       45            3
 On the Nod      45            2
 Kill Bill       110
 Lobbyist        110           1
-Local Election  110           2 
+Local Election  110           2
 No Confidence   55            1
-Goverment Ball  500
 
 -- Cards (Change)
-Distrib-u-Matic 25
-Committee       30            2
-Your Turn       30
-Presto!         150
+Distrib-u-Matic 20
+Committee       23            2
+Your Turn       25
+Presto!         115
 Not Your Turn   250
-Supersize Me    30
-Shrink Potion   50
-Change Ball     500
 
 -- Cards (Justice)
-Absolv-o-Matic  45            3 
+Absolv-o-Matic  45            3
 Stool Pigeon    40
 Drop your Wea.. 80            2
-Discard Picking 130
-Justice Ball    500
-Penalty Box     175
+Discard Picking 170
 
 * Drop your Wea.. = Drop your Weapon
-
--- misc
-
-X Point         15
-Y Point         15
-Medal           1500
 
 ===============================================================================
 
@@ -110,6 +98,7 @@ History:
 27 August 2009 07:21:10    Murphy +270zm (Lob, 2*DyW)
 28 August 2009 22:00:11    BobTHJ +80zm (4*RC)
 31 August 2009 20:42:11    Tiger +260zm (2*WRV)
+31 August 2009 22:20:12    BobTHJ +12zm (8c)
 
 ===============================================================================
 
