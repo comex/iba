@@ -16,7 +16,7 @@ Nickname                     zm
 *comex                       814
 *coppro                      780
 *Murphy                      270
-*Pavitra                     703
+*Pavitra                     897
 *Taral                       45
 *Tiger                       377
 *woggle                      450
@@ -57,8 +57,8 @@ WRV             130           6
 
 -- Cards (Government)
 Roll Call       20            6
-Debate-o-Matic  20            3
-Arm-twist       45            4
+Debate-o-Matic  20            4
+Arm-twist       45            5
 On the Nod      45            3
 Kill Bill       110           5
 Lobbyist        110           3
@@ -77,7 +77,7 @@ Shrink Potion   50
 Change Ball     500
 
 -- Cards (Justice)
-Absolv-o-Matic  45            7
+Absolv-o-Matic  45            10
 Stool Pigeon    40
 Drop your Wea.. 80            3
 Discard Picking 130
@@ -130,6 +130,7 @@ History:
 03 September 2009 19:06:03 comex +540zm (2*Lob, LE, KB, NC)
                                   -46zm (2*Com)
 03 September 2009 19:51:04 woggle +90zm (2*AoM)
+03 September 2009 23:14:03 Pavitra +194zm (3*AoM, DoM, At)
 
 ===============================================================================
 
