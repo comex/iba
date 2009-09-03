@@ -34,8 +34,9 @@ $fp = fopen("http://nomic.bob-space.com/agorareport.aspx?contract=Scorekeepor", 
 while($line = fgets($fp)) {
     if(preg_match('/^All other players have/', $line)) break;
     if(!preg_match('/(.*) +([0-9]+)\+ *([0-9]+)i/U', $line, $matches)) continue;
-    $cards[$user]['X Point'] = intval($matches[1]);
-    $cards[$user]['Y Point'] = intval($matches[2]);
+    $user = trim($matches[1]);
+    $cards[$user]['X Point'] = intval($matches[2]);
+    $cards[$user]['Y Point'] = intval($matches[3]);
 }
 fclose($fp);
 
@@ -56,7 +57,6 @@ while($line = fgets($fp)) {
     for($i = 0; $i < count($ar); $i++) {
         $cards[$p][$ar[$i]] = intval($stuff[$i]);
     }
-    break;
 }
 header('Content-Type: text/plain');
 echo json_encode($cards) . "\n";
