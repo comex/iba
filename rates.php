@@ -204,6 +204,7 @@ function fixTotals() {
     var prev = prevs[parties.value];
     if(!prev) prev = 0;
     var total = 0;
+    var yes = false;
     var md; for(var e = 0; md = order[e]; e++) {
         var minev = data[md][3];
         if(minev == 0) continue;
@@ -221,13 +222,17 @@ function fixTotals() {
             var q = Math.round(mult * rate);
             total -= q;
             a -= q;
+            yes = true;
         }
         
         var line = 'I ' + (minev < 0 ? 'deposit' : 'withdraw') + ' ' + (ab > 1 ? (ab + ' * ') : 'a ') + data[md][0] + ' for ' + Math.abs(a) + 'zm.\n';
         if(minev < 0) deposit += line; else withdraw += line;
     }
-    if(total == 0) {
+    if(!yes) {
         totale.innerHTML = '--';
+        totale.className = '';
+    } else if(total == 0) {
+        totale.innerHTML = '0';
         totale.className = '';
     } else {
         totale.innerHTML = (total > 0 ? '+' : '') + total + 'zm';
@@ -250,8 +255,8 @@ fixLeft();
 <script type="text/javascript">
 var srs = [
     document.getElementById('sectionrate'),
-    document.getElementById('sectionreport'),
-    document.getElementById('sectioncontract')
+    document.getElementById('sectioncontract'),
+    document.getElementById('sectionreport')
 ];
 var curn = 0; 
 function go(n) {
