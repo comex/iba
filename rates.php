@@ -231,16 +231,14 @@ function fixTotals() {
     if(!yes) {
         totale.innerHTML = '--';
         totale.className = '';
-    } else if(total == 0) {
-        totale.innerHTML = '0';
-        totale.className = '';
     } else {
-        totale.innerHTML = (total > 0 ? '+' : '') + total + 'zm';
-        totale.className = (total > 0 ? 'pos' : 'neg');
+        totale.innerHTML = (total >= 0 ? '+' : '') + total + 'zm';
+        totale.className = (total >= 0 ? 'pos' : 'neg');
     }
     stuffe.value = deposit + withdraw;
 }
 parties.onchange = fixTotals;
+fixTotals();
 var lt = document.getElementById('lt');
 var tab = document.getElementById('tab');
 var aaa = document.getElementById('aaa');
