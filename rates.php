@@ -1,6 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="rates.css?<?php echo @filemtime('rates.css'); ?>">
+<title>industrial bank &amp; agora</title>
 </head>
 <body>
 <?php
