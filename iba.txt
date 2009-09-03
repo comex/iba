@@ -20,6 +20,7 @@ Nickname                     zm
 Taral                        45
 *Tiger                       377
 *woggle                      360
+Wooble                       481
 
 * IBA party
 
@@ -58,8 +59,8 @@ WRV             130           6
 Roll Call       20            6
 Debate-o-Matic  20            3
 Arm-twist       45            4
-On the Nod      45            2
-Kill Bill       110
+On the Nod      45            3
+Kill Bill       110           4
 Lobbyist        110           1
 Local Election  110           2
 No Confidence   55            1
@@ -113,6 +114,7 @@ History:
                            comex  +30zm (P6473)
 01 September 2009 03:37:03 coppro +520zm (4*WRV)
 01 September 2009 21:24:04 Taral +45zm (At)
+03 September 2009 16:39:04 Wooble +481zm (4*KB, OtN)
 
 ===============================================================================
 

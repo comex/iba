@@ -107,7 +107,7 @@ function fixTotals() {
             yes = true;
         }
         
-        var line = 'I ' + (minev < 0 ? 'deposit' : 'withdraw') + ' ' + (ab > 1 ? (ab + ' * ') : 'a ') + data[md][0] + ' for ' + Math.abs(a) + 'zm.\n';
+        var line = 'I ' + (minev < 0 ? 'deposit' : 'withdraw') + ' ' + (ab > 1 ? (ab + ' * ') : 'one ') + data[md][0] + ' for ' + Math.abs(a) + 'zm.\n';
         if(minev < 0) deposit += line; else withdraw += line;
     }
     if(!yes) {

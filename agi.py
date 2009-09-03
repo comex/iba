@@ -103,7 +103,7 @@ monday = datetime.datetime.utcnow()
 monday = (monday - datetime.timedelta(days=monday.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
 
 datefmt = '%d %B %Y %H:%M:%S'
-m =  re.findall('^([^\n]*:[0-9][0-9]) +([^\n]*) [\-\+][0-9]+zm \((.*?)\)', history, re.S | re.M)
+m =  re.findall('^([^\n]*:[0-9][0-9]) +([^\n]*) [\+][0-9]+zm \((.*?)\)', history, re.S | re.M)
 prev = {}
 for when, person, stuff in m:
     when = datetime.datetime.strptime(when, datefmt)
