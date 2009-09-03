@@ -64,21 +64,33 @@ Kill Bill       110           5
 Lobbyist        110           3
 Local Election  110           3
 No Confidence   55            3
+Goverment Ball  500
 
 -- Cards (Change)
-Distrib-u-Matic 20
-Committee       23
-Your Turn       25
-Presto!         115
+Distrib-u-Matic 25
+Committee       30
+Your Turn       30
+Presto!         150
 Not Your Turn   250
+Supersize Me    30
+Shrink Potion   50
+Change Ball     500
 
 -- Cards (Justice)
 Absolv-o-Matic  45            7
 Stool Pigeon    40
 Drop your Wea.. 80            3
-Discard Picking 170
+Discard Picking 130
+Justice Ball    500
+Penalty Box     175
 
 * Drop your Wea.. = Drop your Weapon
+
+-- misc
+
+X Point         15
+Y Point         15
+Medal           1500
 
 ===============================================================================
 
