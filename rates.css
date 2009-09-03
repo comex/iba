@@ -1,0 +1,121 @@
+body {
+    background-color: #424242;
+    font-family: Verdana;
+    font-size: 11px;
+}
+#sectionreport {
+    color: #fff;
+    white-space: pre;
+    font-family: monospace;
+    display: none;
+}
+#sectioncontract {
+    color: #fff;
+    white-space: pre;
+    display: none;
+}
+#sectionrate {
+}
+#links {
+    margin-bottom: 3px;
+}
+#links .link {
+    border-color: #606060;
+    color: #81ffa5;
+    text-decoration: underline;
+}
+#links .linkactive {
+    text-decoration: none;
+}
+#tab {
+        
+}
+#tab td, th {
+    background-color: #606060;
+    color: #81ffa5;
+    font-family: Verdana;
+    font-size: 11px;
+}
+#tab td.ghost {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+#tab td.rate {
+    color: #ffa9af;
+    font-weight: bold;
+    padding-left: 5px;
+}
+#tab button {
+    background-color: #404040;
+    font-weight: bold;
+    color: #888; /*#e8646a;*/
+    border: 1px solid #777777;
+    text-align: center;
+    width: 50px;
+    margin: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+#tab td.mine {
+    font-weight: bold;
+}
+#tab td.mipos, td.mineg, td.mirate {
+    width: 40px;
+    text-align: center;
+}
+#tab td.mipos {
+    color: #81ffa5;
+}
+#tab td.mineg {
+    color: #f7a9af;
+}
+#tab td.mirate {
+    color: #ffa9af;
+}
+.negzm {
+    font-weight: bold;
+    color: #ff7777;
+}
+.pos {
+    font-weight: bold;
+    color: #81ffa5;
+}
+.neg {
+    font-weight: bold;
+    color: #f7a9af;
+}
+div.lt {
+    position: fixed;
+    top: 27px;
+    background-color: #606060;
+    color: #ffa9af;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 5px; 
+}
+div#row {
+    margin-bottom: 3px;
+}
+div#row a {
+    color: #81ffa5;
+}
+#cancel {
+    display: none;
+}
+textarea#stuff {
+    background-color: #606060;
+    border: 1px solid #404040;
+    padding: 1px;
+    color: #ffa9af;
+    height: 200px;
+    font-family: Verdana;
+    font-size: 11px;
+    margin-top: 5px;
+}
+#parties {
+    background-color: #606060;
+    color: #ffffff;
+    border: 1px solid #404040;
+}

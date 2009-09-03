@@ -24,8 +24,8 @@ for rate in sections[2+ox].split('\n'):
         r = map(str.strip, (rate[:16], rate[16:30], rate[30:]))
         r = [r[0], int(r[1]), int(r[2]) if r[2] != '' else 0]
         rates.append(r)
-        if r[0] == 'Drop your Wea..': r[0] = 'Drop your weapon'
-        rdict[hashlib.md5(r[0]).hexdigest()[:4]] = r[1]
+        if r[0] == 'Drop your Wea..': r[0] = 'Drop your Weapon'
+        rdict[r[0]] = r[1]
     else:
         rates.append(rate)
 monday = datetime.datetime.utcnow()
@@ -50,5 +50,5 @@ contract = sections[4+ox]
 
 contract = re.sub(re.compile('^([XIV]+\. .*)$', re.M), '<b>\\1</b>', contract)
 
-json.dump((rates, prev, sorted(holdings.keys(), key=str.lower), sorted(rdict.keys(), key=lambda a: -rdict[a]), contract), sys.stdout)
+json.dump((rates, prev, sorted(holdings.keys(), key=str.lower), sorted(rdict.keys(), key=lambda a: -rdict[a]), contract, holdings), sys.stdout)
 print
