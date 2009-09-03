@@ -1,17 +1,44 @@
+<html>
+<head>
 <style>
 body {
     background-color: #424242;
     font-family: Verdana;
     font-size: 11px;
 }
+#sectionreport {
+    color: #fff;
+    white-space: pre;
+    font-family: monospace;
+    display: none;
+}
+#sectioncontract {
+    color: #fff;
+    white-space: pre;
+    display: none;
+}
+#sectionrate {
+}
+#links {
+    margin-bottom: 3px;
+}
+#links .link {
+    border-color: #606060;
+    color: #81ffa5;
+    text-decoration: underline;
+}
 #tab {
-
+        
 }
 #tab td, th {
     background-color: #606060;
     color: #81ffa5;
     font-family: Verdana;
     font-size: 11px;
+}
+#tab td.ghost {
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 #tab td.rate {
     color: #ffa9af;
@@ -43,6 +70,14 @@ body {
 #tab td.mineg {
     color: #f7a9af;
 }
+#total.pos {
+    font-weight: bold;
+    color: #81ffa5;
+}
+#total.neg {
+    font-weight: bold;
+    color: #f7a9af;
+}
 div.lt {
     position: fixed;
     top: 27px;
@@ -55,22 +90,40 @@ div.lt {
 }
 textarea#stuff {
     background-color: #606060;
-    border-color: #404040;
+    border: 1px solid #404040;
+    padding: 1px;
     color: #ffa9af;
     height: 200px;
+    font-family: Verdana;
+    font-size: 11px;
+    margin-top: 5px;
 }
 #parties {
     background-color: #606060;
     color: #ffffff;
-    border-color: #404040;
+    border: 1px solid #404040;
 }
 </style>
+</head>
+<body>
 <?php
 if(@filemtime('.agd.cache') < max(@filemtime('agdump.py'), @filemtime('iba.txt'))) {
     passthru('python agdump.py 2>&1 > .agd.cache');
 }
-list($rates, $prev, $parties, $order) = json_decode(file_get_contents('.agd.cache'));
+list($rates, $prev, $parties, $order, $contract) = json_decode(file_get_contents('.agd.cache'));
 ?>
+<div id="links">
+<a class="link" href="#0" onclick="go(0);">rate calculator</a>
+<a class="link" href="#1" onclick="go(1);">contract</a>
+<a class="link" href="#2" onclick="go(2);">report</a>
+</div>
+<div id="sectionreport">
+<?php readfile('iba.txt'); ?>
+</div>
+<div id="sectioncontract">
+<?php echo $contract; ?>
+</div>
+<div id="sectionrate">
 <table id="tab">
 <tr>
 <th>asset</th>
@@ -82,7 +135,7 @@ $rated = false;
 foreach($rates as $rate) {
     if(gettype($rate) == 'string') {
         if(substr($rate, 0, 3) == '-- ') {
-            echo "<tr><td colspan='5'" . ($rated ? "" : " id='aaa'") . "><b>" . htmlentities(substr($rate, 3)) . "</b>";
+            echo "<tr><td class='ghost' colspan='5'" . ($rated ? "" : " id='aaa'") . "><b>" . htmlentities(substr($rate, 3)) . "</b>";
             $rated = true;
         }
     } else {
@@ -100,7 +153,9 @@ Player:
 <select name="parties" id="parties">
 <?php foreach($parties as $party) {
     $party = htmlentities($party);
-    echo "<option value='$party'>$party</option>\n";
+    $p = $prev->$party;
+    if(!$p) $p = 0;
+    echo "<option value='$party'>$party ($p)</option>\n";
 } ?>
 </select>
 <br>
@@ -142,8 +197,10 @@ var prevs = <?php echo json_encode($prev); ?>;
 var parties = document.getElementById('parties');
 var prev2rate = [1.00, 1.00, 1.00, 1.00, 0.90, 0.90, 0.90, 0.80, 0.80, 0.80, 0.73, 0.62, 0.50, 0.38, 0.26, 0.18, 0.12, 0.08, 0.05, 0.03, 0.01];
 var order = <?php echo json_encode($order); ?>;
+var totale = document.getElementById('total');
+var stuffe = document.getElementById('stuff');
 function fixTotals() {
-    var stuff = '';
+    var deposit = ''; var withdraw = '';
     var prev = prevs[parties.value];
     if(!prev) prev = 0;
     var total = 0;
@@ -165,12 +222,20 @@ function fixTotals() {
             total -= q;
             a -= q;
         }
-        stuff += 'I ' + (minev < 0 ? 'deposit' : 'withdraw') + ' ' + (ab > 1 ? (ab + ' * ') : 'a ') + data[md][0] + ' for ' + Math.abs(a) + 'zm.\n';
+        
+        var line = 'I ' + (minev < 0 ? 'deposit' : 'withdraw') + ' ' + (ab > 1 ? (ab + ' * ') : 'a ') + data[md][0] + ' for ' + Math.abs(a) + 'zm.\n';
+        if(minev < 0) deposit += line; else withdraw += line;
     }
-    document.getElementById('total').innerHTML = (total > 0 ? '+' : '') + total + 'zm';
-    document.getElementById('stuff').value = stuff;
+    if(total == 0) {
+        totale.innerHTML = '--';
+        totale.className = '';
+    } else {
+        totale.innerHTML = (total > 0 ? '+' : '') + total + 'zm';
+        totale.className = (total > 0 ? 'pos' : 'neg');
+    }
+    stuffe.value = deposit + withdraw;
 }
-
+parties.onchange = fixTotals;
 var lt = document.getElementById('lt');
 var tab = document.getElementById('tab');
 var aaa = document.getElementById('aaa');
@@ -181,3 +246,27 @@ function fixLeft() {
 }
 fixLeft();
 </script>
+</div>
+<script type="text/javascript">
+var srs = [
+    document.getElementById('sectionrate'),
+    document.getElementById('sectionreport'),
+    document.getElementById('sectioncontract')
+];
+var curn = 0; 
+function go(n) {
+    for(var i = 0; i < srs.length; i++) {
+        srs[i].style.display = (i == n) ? 'block' : 'none';
+    }
+    if(n == 0) fixLeft();
+    curn = n;
+}
+function checkHash() {
+    var q = window.location.hash.replace('#', '');
+    if(q) go(parseInt(q));
+}
+setInterval(checkHash, 200);
+checkHash();
+</script>
+</body>
+</html>
