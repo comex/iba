@@ -23,7 +23,7 @@ while($line = fgets($fp)) {
         }
     } else if($mode == 2) {
         if($line == '') break;
-        $cur = $line;
+        $cur = strtolower($line);
         $cards[$cur] = array();
         $mode = 1;
     }
@@ -34,7 +34,7 @@ $fp = fopen("http://nomic.bob-space.com/agorareport.aspx?contract=Scorekeepor", 
 while($line = fgets($fp)) {
     if(preg_match('/^All other players have/', $line)) break;
     if(!preg_match('/(.*) +([0-9]+)\+ *([0-9]+)i/U', $line, $matches)) continue;
-    $user = trim($matches[1]);
+    $user = strtolower(trim($matches[1]));
     $cards[$user]['X Point'] = intval($matches[2]);
     $cards[$user]['Y Point'] = intval($matches[3]);
 }
@@ -51,7 +51,7 @@ while($line = fgets($fp)) {
     if($line == '') break;
         
     
-    $p = trim(substr($line, 0, 19));
+    $p = strtolower(trim(substr($line, 0, 19)));
     $stuff = preg_split('/\s+/', substr($line, 19));
     $ar = array('0 Crop', '1 Crop', '2 Crop', '3 Crop', '4 Crop', '5 Crop', '6 Crop', '7 Crop', '8 Crop', '9 Crop', 'X Crop', 'WRV');
     for($i = 0; $i < count($ar); $i++) {

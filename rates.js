@@ -129,7 +129,7 @@ function cancelBob() {
 }
 function updateBob() {
     if(bobmode) {
-        var p = parties.value;
+        var p = parties.value.toLowerCase();
         if(p == 'comex') p = 'c.';
         user = users[p];
         if(!user) user = {};
