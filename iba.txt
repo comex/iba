@@ -11,18 +11,27 @@ Current Holdings:
 
 Nickname                     zm
 ---------------------------------
-*BobTHJ                      182
+*BobTHJ                      170
 *C-walker                    135
-*Murphy                      270
-*Pavitra                     623
-*Tiger                       377
 *comex                       320
-*coppro                      130
+*coppro                      780
+*Murphy                      270
+*Pavitra                     703
+Taral                        45
+*Tiger                       377
 *woggle                      360
 
 * IBA party
 
 All IBA parties are listed.  All other persons have no zm.
+
+===============================================================================
+
+Unfilled Offers (can be filled by announcement):
+
+* Pavitra [150zm]: Play Lobbyist, specifying Pavitra.
+
+(ISELL votes not included.)
 
 ===============================================================================
 
@@ -40,15 +49,15 @@ asset           rate (zm)    # in bank
 5 Crop          27
 6 Crop          50            7
 7 Crop          19            4
-8 Crop          12            1
+8 Crop          12
 9 Crop          11            8
 X Crop          100           12
-WRV             130           2
+WRV             130           6
 
 -- Cards (Government)
 Roll Call       20            6
-Debate-o-Matic  20            1
-Arm-twist       45            3
+Debate-o-Matic  20            3
+Arm-twist       45            4
 On the Nod      45            2
 Kill Bill       110
 Lobbyist        110           1
@@ -63,9 +72,9 @@ Presto!         115
 Not Your Turn   250
 
 -- Cards (Justice)
-Absolv-o-Matic  45            3
+Absolv-o-Matic  45            5
 Stool Pigeon    40
-Drop your Wea.. 80            2
+Drop your Wea.. 80            3
 Discard Picking 170
 
 * Drop your Wea.. = Drop your Weapon
@@ -97,8 +106,13 @@ History:
                                  -177zm (2*6c, 2*5c, 4c)
 27 August 2009 07:21:10    Murphy +270zm (Lob, 2*DyW)
 28 August 2009 22:00:11    BobTHJ +80zm (4*RC)
+30 August 2009 15:36:11    coppro +130zm (2*AoM, 2*DoM)
 31 August 2009 20:42:11    Tiger +260zm (2*WRV)
-31 August 2009 22:20:12    BobTHJ +12zm (8c)
+31 August 2009 23:39:02    Pavitra +80zm (DyW)
+01 September 2009 03:19:03 coppro -30zm
+                           comex  +30zm (P6473)
+01 September 2009 03:37:03 coppro +520zm (4*WRV)
+01 September 2009 21:24:04 Taral +45zm (At)
 
 ===============================================================================
 
@@ -177,8 +191,8 @@ prev    rate
 VI. Offers
 
 An Offer is an entity with three fields:
-  Selling:   (a nonempty list of assets and/or actions)
-  For cost:  (a nonempty list of assets and/or actions)
+  Selling:   (a nonempty list of assets, actions, and/or obligations)
+  For cost:  (a nonempty list of assets, actions, and/or obligations)
   Repeats:   (a nonnegative integer, or infinity; default 1)
 
 A person CAN create an Offer by announcement, thus becoming its
@@ -193,13 +207,19 @@ the start and end of the procedure; and notwithstanding the previous
 sentence, if the procedure would not be entirely successful, the Offer
 cannot be filled at all:
 
-- the filler acts on behalf of the offerer to transfer the assets in the
-'Selling' field to the filler, and to take the actions in the 'Selling' field, and
-- the filler transfers the assets in the 'For cost' field to the offerer, and
-takes the actions in the 'For cost' field, and
+- the filler acts on behalf of the offerer to transfer the assets in
+  the 'Selling' field to the filler, and to take the actions in the
+  'Selling' field, and
+- the filler transfers the assets in the 'For cost' field to the
+  offerer, and takes the actions in the 'For cost' field, and
 - the Offer's 'Repeats' field is decreased by one.
 
-An Offer with zero Repeats is automatically destroyed.
+The filler SHALL satisfy the obligations (if any) in the 'For cost'
+field; the offerer SHALL satisfy the obligations (if any) in the
+Selling' field.
+
+An Offer with zero Repeats CANNOT be filled.  A non-pending Offer with
+zero Repeats is automatically destroyed.
 
 To intend to sell X for Y is to create an Offer with X as 'Selling'
 and Y as 'For cost'; to intend to buy X for Y is to create an Offer
@@ -336,7 +356,7 @@ parties.
 XIV. Pending Offers
 
 A person is involved in an Offer if e is its offerer or filler.  A
-pending Offer is an Offer whose effects impose an ongoing or
+pending Offer is an Offer whose effects impose an ongoing, future, or
 unsatisfied obligation on a person involved in it.
 
 XV. Presidential Restriction
