@@ -120,6 +120,7 @@ prev2rate = [1.00, 1.00, 1.00, 1.00, 0.90, 0.90, 0.90, 0.80, 0.80, 0.80, 0.73, 0
 
 person = raw_input('Person> ')
 sores = []
+totals = []
 def transact(typ, asts): # typ is 'deposit'/'withdraw'
     total = 0
     sore = []
@@ -147,16 +148,20 @@ def transact(typ, asts): # typ is 'deposit'/'withdraw'
             total += int(erate)
             if holdings[person] < 0: raise ValueError(holdings[person])
     total = ('+' * (typ == 'deposit')) + str(total) + 'zm'
-
-    b = 28 + len(person) + 1 + len(total) + 2
-    c = ' ' * b
-    sores.append(total + ' (' + wrap(', '.join(sore), 70 - b).replace('\n', '\n' + c) + ')')
-
+    totals.append((total, sore))
 
 while True:
     line = raw_input()
     if line == '': break
     transact(*line.strip().split())
+
+max_total_length = max(len(a[0]) for a in totals)
+for total, sore in totals:
+    total = (' ' * (max_total_length - len(total))) + total
+    b = 28 + len(person) + 1 + len(total) + 2
+    c = ' ' * b
+    sores.append(total + ' (' + wrap(', '.join(sore), 70 - b).replace('\n', '\n' + c) + ')')
+
 
 if len(sores) > 0:
     hdr = now.strftime(datefmt).ljust(27) + person + ' '

@@ -13,11 +13,11 @@ Nickname                     zm
 ---------------------------------
 *BobTHJ                      170
 *C-walker                    135
-*comex                       320
+*comex                       814
 *coppro                      780
 *Murphy                      270
 *Pavitra                     703
-Taral                        45
+*Taral                       45
 *Tiger                       377
 *woggle                      360
 Wooble                       481
@@ -60,14 +60,14 @@ Roll Call       20            6
 Debate-o-Matic  20            3
 Arm-twist       45            4
 On the Nod      45            3
-Kill Bill       110           4
-Lobbyist        110           1
-Local Election  110           2
-No Confidence   55            1
+Kill Bill       110           5
+Lobbyist        110           3
+Local Election  110           3
+No Confidence   55            3
 
 -- Cards (Change)
 Distrib-u-Matic 20
-Committee       23            2
+Committee       23
 Your Turn       25
 Presto!         115
 Not Your Turn   250
@@ -115,6 +115,8 @@ History:
 01 September 2009 03:37:03 coppro +520zm (4*WRV)
 01 September 2009 21:24:04 Taral +45zm (At)
 03 September 2009 16:39:04 Wooble +481zm (4*KB, OtN)
+03 September 2009 19:06:03 comex +540zm (2*Lob, LE, KB, NC)
+                                  -46zm (2*Com)
 
 ===============================================================================
 
