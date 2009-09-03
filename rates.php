@@ -238,6 +238,8 @@ function fixTotals() {
     stuffe.value = deposit + withdraw;
 }
 parties.onchange = fixTotals;
+parties.onkeydown = fixTotals;
+parties.onkeyup = fixTotals;
 fixTotals();
 var lt = document.getElementById('lt');
 var tab = document.getElementById('tab');
