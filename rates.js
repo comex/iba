@@ -188,7 +188,7 @@ var lcs = document.getElementById('links').getElementsByTagName('a');
 var curn = 0;
 var curhash = null;
 function go(n) {
-    if(n == curn) return;
+    if(n == curn) return true;
     for(var i = 0; i < srs.length; i++) {
         srs[i].style.display = (i == n) ? 'block' : 'none';
         lcs[i].className = (i == n) ? 'link linkactive' : 'link linkinactive';
@@ -212,7 +212,8 @@ function checkHash() {
             }
         }
     } else {
-        go(0);
+        if(go(0))
+            window.location.hash = curhash = labels[0];
     }
 }
 setInterval(checkHash, 200);
