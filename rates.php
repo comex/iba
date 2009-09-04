@@ -12,9 +12,9 @@ list($rates, $prev, $parties, $order, $contract, $holdings) = json_decode(file_g
 $loser = $parties[0];
 ?>
 <div id="links">
-<a class="link linkactive" href="#0" onclick="go(0);">[rate calculator]</a>
-<a class="link" href="#1" onclick="go(1);">contract</a>
-<a class="link" href="#2" onclick="go(2);">report</a>
+<a class="link linkactive" href="#calc" onclick="return go(0);">[rate calculator]</a>
+<a class="link" href="#contract" onclick="return go(1);">contract</a>
+<a class="link" href="#report" onclick="return go(2);">report</a>
 </div>
 <div id="sectionreport">
 <?php

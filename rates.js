@@ -173,14 +173,20 @@ function askBob() {
         updateBob();
     });
 }
-bob.onclick = askBob
+bob.onclick = askBob;
 var srs = [
     document.getElementById('sectionrate'),
     document.getElementById('sectioncontract'),
     document.getElementById('sectionreport')
 ];
+var labels = [
+    'calc',
+    'contract',
+    'report'
+];
 var lcs = document.getElementById('links').getElementsByTagName('a');
-var curn = 0; 
+var curn = 0;
+var curhash = null;
 function go(n) {
     if(n == curn) return;
     for(var i = 0; i < srs.length; i++) {
@@ -192,11 +198,22 @@ function go(n) {
     }
     if(n == 0) fixLeft();
     curn = n;
+    window.location.hash = curhash = labels[n];
+    return false;
 }
 function checkHash() {
+    if(curhash && curhash == window.location.hash) return;
     var q = window.location.hash.replace('#', '');
-    q = parseInt(q);
-    go(q?q:0);
+    if(q) { 
+        for(var i = 0; i < labels.length; i++) {
+            if(labels[i] == q) {
+                go(i);
+                break;
+            }
+        }
+    } else {
+        go(0);
+    }
 }
 setInterval(checkHash, 200);
 checkHash();
