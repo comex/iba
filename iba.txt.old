@@ -11,16 +11,16 @@ Current Holdings:
 
 Nickname                     zm
 ---------------------------------
-*BobTHJ                      170
+*BobTHJ                      764
 *C-walker                    135
 *comex                       814
 *coppro                      230
 *Murphy                      270
-*Pavitra                     897
-*Taral                       45
+*Pavitra                     1048
+*Taral                       480
 *Tiger                       377
 *woggle                      374
-Wooble                       481
+Wooble                       182
 
 * IBA party
 
@@ -53,17 +53,17 @@ asset           rate (zm)    # in bank
 8 Crop          12
 9 Crop          11            8
 X Crop          100           12
-WRV             130           6
+WRV             130           8
 
 -- Cards (Government)
-Roll Call       20            6
-Debate-o-Matic  20            4
-Arm-twist       45            5
+Roll Call       20            15
+Debate-o-Matic  20            5
+Arm-twist       45            14
 On the Nod      45            3
-Kill Bill       110           5
+Kill Bill       110           7
 Lobbyist        110           1
 Local Election  110
-No Confidence   55            3
+No Confidence   55            5
 Goverment Ball  500
 
 -- Cards (Change)
@@ -77,9 +77,9 @@ Shrink Potion   50
 Change Ball     500
 
 -- Cards (Justice)
-Absolv-o-Matic  45            10
+Absolv-o-Matic  45            4
 Stool Pigeon    40
-Drop your Wea.. 80            3
+Drop your Wea.. 80            2
 Discard Picking 130
 Justice Ball    500
 Penalty Box     175
@@ -123,17 +123,24 @@ History:
 31 August 2009 20:42:11    Tiger +260zm (2*WRV)
 31 August 2009 23:39:02    Pavitra +80zm (DyW)
 01 September 2009 03:19:03 coppro -30zm
-                           comex  +30zm (P6473)
+                           comex  +30zm [P6473]
 01 September 2009 03:37:03 coppro +520zm (4*WRV)
 01 September 2009 21:24:04 Taral +45zm (At)
 03 September 2009 16:39:04 Wooble +481zm (4*KB, OtN)
 03 September 2009 19:06:03 comex +540zm (2*Lob, LE, KB, NC)
                                   -46zm (2*Com)
 03 September 2009 19:51:04 woggle +90zm (2*AoM)
-03 September 2009 23:14:03 Pavitra +194zm (3*AoM, DoM, At)
+03 September 2009 23:14:03 Pavitra +151zm (2*AoM, DoM, At)
+03 September 2009 23:50:04 Taral +175zm (PB)
+                                 +260zm (2*WRV)
+                           [IBA -PB] 
 04 September 2009 01:10:04 coppro -220zm (2*Lob)
                                   -330zm (3*LE)
 04 September 2009 01:12:04 woggle -76zm (4*7c)
+04 September 2009 19:00:04 Wooble +141zm (9*RC, At)
+04 September 2009 19:15:04 Wooble -80zm (DyW)
+04 September 2009 19:55:04 Wooble -360zm (8*AoM)
+04 September 2009 19:55:07 BobTHJ +594zm (2*KB, 2*NC, 7*At)
 
 ===============================================================================
 
