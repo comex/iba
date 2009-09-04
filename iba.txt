@@ -13,7 +13,7 @@ Nickname                     zm
 ---------------------------------
 *BobTHJ                      764
 *C-walker                    135
-*comex                       814
+*comex                       654
 *coppro                      230
 *Murphy                      270
 *Pavitra                     1048
@@ -79,7 +79,7 @@ Change Ball     500
 -- Cards (Justice)
 Absolv-o-Matic  45            4
 Stool Pigeon    40
-Drop your Wea.. 80            2
+Drop your Wea.. 80
 Discard Picking 130
 Justice Ball    500
 Penalty Box     175
@@ -141,6 +141,7 @@ History:
 04 September 2009 19:55:04 Wooble -360zm (8*AoM)
 04 September 2009 19:55:07 BobTHJ +594zm (2*KB, 2*NC, 7*At)
 04 September 2009 20:35:04 woggle +73zm (3*DuM)
+04 September 2009 23:02:05 comex -160zm (2*DyW)
 
 ===============================================================================
 
