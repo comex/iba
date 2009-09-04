@@ -32,19 +32,36 @@ monday = datetime.datetime.utcnow()
 monday = (monday - datetime.timedelta(days=monday.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
 
 datefmt = '%d %B %Y %H:%M:%S'
-m =  re.findall('^([^\n]*:[0-9][0-9]) +([^\n]*) [\+][0-9]+zm \((.*?)\)', sections[3+ox], re.S | re.M)
+hist = ''
+when = None
+for line in sections[3+ox].split('\n'):
+    a, b = line[:27].strip(), line[27:].strip()
+    if a != '' and a != 'History:':
+        when = datetime.datetime.strptime(a, datefmt)
+    if b != '' and when >= monday:
+        hist += b + '\n' 
+hist = hist.replace(',\n', ', ')
+hist = hist.replace(' +', '\n+')
+hist = hist.replace(' -', '\n-')
 prev = {}
-for when, person, stuff in m:
-    when = datetime.datetime.strptime(when, datefmt)
-    if when < monday: continue
-    for n in stuff.split(','):
-        n = n.strip().split('*')
-        if len(n) > 1:
-            p = int(n[0])
-        else:
-            p = 1
-        prev[person] = prev.get(person, 0) + p
 
+
+for line in hist.split('\n'):
+    line = line.strip()
+    if line == '' or '[' in line or ']' in line: continue
+    if line[0] == '+':
+        m = re.search('\((.*)\)', line)
+        if not m: continue
+        for n in m.group(1).split(','):
+            n = n.strip().split('*')
+            if len(n) > 1:
+                p = int(n[0])
+            else:
+                p = 1
+            prev[actor] = prev.get(actor, 0) + p
+
+    else:
+        actor = line
 
 contract = sections[4+ox]
 
