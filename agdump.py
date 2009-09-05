@@ -35,8 +35,9 @@ datefmt = '%d %B %Y %H:%M:%S'
 hist = ''
 when = None
 for line in sections[3+ox].split('\n'):
+    if line.startswith('*'): continue
     a, b = line[:27].strip(), line[27:].strip()
-    if a != '' and a != 'History:':
+    if a != '' and a != 'History:' and '[' not in a:
         when = datetime.datetime.strptime(a, datefmt)
     if b != '' and when >= monday:
         hist += b + '\n' 
