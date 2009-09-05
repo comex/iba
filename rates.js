@@ -32,7 +32,7 @@ function c(x, md, all) {
     if(bankv < 0) return;
     
     if(user) {
-        u = user[md];
+        u = user[md.toLowerCase()];
         if(!u) u = 0;
         if(u + minev < 0) return;    
     }
