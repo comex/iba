@@ -14,7 +14,7 @@ Nickname                     zm
 *BobTHJ                      764
 *C-walker                    345
 *comex                       526
-*coppro                      230
+*coppro                      45
 *Murphy                      270
 *Pavitra                     1048
 *Taral                       480
@@ -53,7 +53,7 @@ asset           rate (zm)    # in bank
 8 Crop          12
 9 Crop          11            8
 X Crop          100           12
-WRV             130           8
+WRV             130           9
 
 -- Cards (Government)
 Roll Call       20            15
@@ -77,7 +77,7 @@ Shrink Potion   50
 Change Ball     500
 
 -- Cards (Justice)
-Absolv-o-Matic  45            7
+Absolv-o-Matic  45
 Stool Pigeon    40
 Drop your Wea.. 80
 Discard Picking 130
@@ -147,6 +147,8 @@ History:
 [...ambiguous actions...]  C-walker +18zm
                            comex -128zm
                            [IBA -Lob]
+13 September 2009 17:32:05 coppro +130zm (WRV)
+                                  -315zm (7*AoM)
 
 ===============================================================================
 

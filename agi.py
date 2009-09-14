@@ -3,7 +3,7 @@ import re, sys, os, shutil, email.Utils, datetime
 # Note: time.py is a really bad name
 vr = sys.stdin.read()
 lines = vr.split('\n')
-dt = [lines[i+1] for i in xrange(len(lines)) if lines[i].find('by yzma.clarkk.net') != -1][0]
+dt = [lines[i+1] for i in xrange(len(lines)) if lines[i].find('by yzma.clarkk.net') != -1 or lines[i].find('by pzk37') != -1][0]
 
 now = datetime.datetime.utcfromtimestamp(email.Utils.mktime_tz(email.Utils.parsedate_tz(dt[dt.index(';')+2:])))
 

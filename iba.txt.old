@@ -12,8 +12,8 @@ Current Holdings:
 Nickname                     zm
 ---------------------------------
 *BobTHJ                      764
-*C-walker                    270
-*comex                       654
+*C-walker                    345
+*comex                       526
 *coppro                      230
 *Murphy                      270
 *Pavitra                     1048
@@ -61,14 +61,14 @@ Debate-o-Matic  20            5
 Arm-twist       45            14
 On the Nod      45            3
 Kill Bill       110           7
-Lobbyist        110           1
+Lobbyist        110
 Local Election  110
 No Confidence   55            5
 Goverment Ball  500
 
 -- Cards (Change)
 Distrib-u-Matic 25            3
-Committee       30
+Committee       30            2
 Your Turn       30
 Presto!         150
 Not Your Turn   250
@@ -143,6 +143,10 @@ History:
 04 September 2009 20:35:04 woggle +73zm (3*DuM)
 04 September 2009 23:02:05 comex -160zm (2*DyW)
 05 September 2009 09:01:04 C-walker +135zm (3*AoM)
+05 September 2009 09:07:04 C-walker +57zm (2*Com)
+[...ambiguous actions...]  C-walker +18zm
+                           comex -128zm
+                           [IBA -Lob]
 
 ===============================================================================
 
