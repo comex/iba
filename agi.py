@@ -138,14 +138,18 @@ prev2rate = [1.00, 1.00, 1.00, 1.00, 0.90, 0.90, 0.90, 0.80, 0.80, 0.80, 0.73, 0
 person = raw_input('Person> ')
 sores = []
 totals = []
-def transact(typ, asts): # typ is 'deposit'/'withdraw'
+def transact(typ, asts, sorted_mode=None): # typ is 'deposit'/'withdraw'
     total = 0
     sore = []
+    stuff = []
     for ast in asts.split(','):
         ii = 1
         if '*' in ast:
             ast = ast.split('*')
             ii, ast = int(ast[0]), ast[1].strip()
+        stuff.append((ii, ast))
+    for ii, ast in (sorted(stuff, key=lambda (a, b): b) if sorted_mode else stuff):
+        if ii > 1:
             sore.append('%d*%s' % (ii, abbrevs.get(ast, ast)))
         else:
             sore.append(abbrevs.get(ast, ast))

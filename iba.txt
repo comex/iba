@@ -18,7 +18,7 @@ Nickname                     zm
 *Murphy                      270
 *Pavitra                     1048
 *Taral                       480
-Tiger                       377
+Tiger                        83
 *woggle                      447
 Wooble                       182
 
@@ -42,14 +42,14 @@ asset           rate (zm)    # in bank
 -------------------------------------
 
 -- AAA
-0 Crop          11            13
-1 Crop          11            2
+0 Crop          11            17
+1 Crop          11            4
 2 Crop          45
-3 Crop          21            9
+3 Crop          21            14
 4 Crop          23
 5 Crop          27
 6 Crop          50            7
-7 Crop          19
+7 Crop          19            2
 8 Crop          12
 9 Crop          11            8
 X Crop          100           12
@@ -60,15 +60,15 @@ Roll Call       20            15
 Debate-o-Matic  20            4
 Arm-twist       45            13
 On the Nod      45            3
-Kill Bill       110           7
+Kill Bill       110           4
 Lobbyist        110
 Local Election  110
 No Confidence   55            4
 Goverment Ball  500
 
 -- Cards (Change)
-Distrib-u-Matic 25            3
-Committee       30            2
+Distrib-u-Matic 25
+Committee       30
 Your Turn       30
 Presto!         150
 Not Your Turn   250
@@ -149,6 +149,8 @@ History:
                            [IBA -Lob]
 13 September 2009 17:32:05 coppro +130zm (WRV)
                                   -315zm (7*AoM)
+15 September 2009 15:39:06 Tiger +171zm (4*0c, 2*1c, 5*3c, 2*7c)
+                                 -465zm (3*DuM, 2*Com, 3*KB)
 
 ===============================================================================
 
