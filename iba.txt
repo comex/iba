@@ -18,7 +18,7 @@ Nickname                     zm
 *Murphy                      270
 *Pavitra                     1048
 *Taral                       480
-*Tiger                       377
+Tiger                       377
 *woggle                      447
 Wooble                       182
 
@@ -57,13 +57,13 @@ WRV             130           9
 
 -- Cards (Government)
 Roll Call       20            15
-Debate-o-Matic  20            5
-Arm-twist       45            14
+Debate-o-Matic  20            4
+Arm-twist       45            13
 On the Nod      45            3
 Kill Bill       110           7
 Lobbyist        110
 Local Election  110
-No Confidence   55            5
+No Confidence   55            4
 Goverment Ball  500
 
 -- Cards (Change)
