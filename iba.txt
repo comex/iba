@@ -12,13 +12,13 @@ Current Holdings:
 Nickname                     zm
 ---------------------------------
 *BobTHJ                      764
-*C-walker                    345
 *comex                       526
 *coppro                      45
 *Murphy                      270
 *Pavitra                     1048
 *Taral                       480
 Tiger                        83
+*Walker                      345
 *woggle                      447
 Wooble                       182
 
