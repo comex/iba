@@ -58,6 +58,7 @@ abbrevs2 =  dict(((v, k) for k, v in abbrevs.items()))
 
 class iba_report:
     DELIM = '\n\n===============================================================================\n\n'
+    datefmt = '%d %B %Y %H:%M:%S'
     prev2rate = [1.00, 1.00, 1.00, 1.00, 0.90, 0.90, 0.90, 0.80, 0.80, 0.80, 0.73, 0.62, 0.50, 0.38, 0.26, 0.18, 0.12, 0.08, 0.05, 0.03, 0.01]
     def __init__(self, name='iba.txt'):
         iba = open(name).read().strip()
@@ -69,9 +70,10 @@ class iba_report:
         self.read_holdings()
         self.read_rates()
         self.read_history()
+        self.parse_history()
         self.read_contract()
 
-    def write_all():
+    def write_all(self):
         self.write_holdings()
         self.write_rates()
         self.write_history()
@@ -130,20 +132,27 @@ All IBA parties are listed.  All other persons have no zm.
         raise KeyError(x)
     
     def read_history(self):
-        history = self.sections[3+self.ox]
+        self.history = self.sections[3+self.ox]
 
-        monday = datetime.datetime.utcnow()
-        monday = (monday - datetime.timedelta(days=monday.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
+    def parse_history(self, limit=True, want_actions=False):
+        if limit:
+            monday = datetime.datetime.utcnow()
+            monday = (monday - datetime.timedelta(days=monday.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
+        if want_actions:
+            actions = []
 
-        datefmt = '%d %B %Y %H:%M:%S'
         hist = ''
         when = None
+
+        history = self.history
+        history = re.sub('\[[^\]]+\]', lambda a: ' ' * len(a.group(0)), history)
+
         for line in history.split('\n'):
             if line.startswith('*'): continue
             a, b = line[:27].strip(), line[27:].strip()
             if a != '' and a != 'History:' and '[' not in a:
-                when = datetime.datetime.strptime(a, datefmt)
-            if b != '' and when >= monday:
+                when = datetime.datetime.strptime(a, self.datefmt)
+            if b != '' and (not limit or when >= monday):
                 hist += b + '\n' 
         hist = hist.replace(',\n', ', ')
         hist = hist.replace(' +', '\n+')
@@ -151,7 +160,10 @@ All IBA parties are listed.  All other persons have no zm.
         prev = {}
         for line in hist.split('\n'):
             line = line.strip()
-            if line == '' or '[' in line or ']' in line: continue
+            if line == '' or line[0] == '[': continue
+            if want_actions and line[0] in ('+', '-'):
+                amt = int(line[:line.find('zm')])
+                actions.append((actor, amt))
             if line[0] == '+':
                 m = re.search('\((.*)\)', line)
                 if not m: continue
@@ -166,8 +178,9 @@ All IBA parties are listed.  All other persons have no zm.
             else:
                 actor = line
 
-        self.history = history
         self.prev = prev
+        if want_actions:
+            return actions
 
     def write_history(self):
         self.sections[3+self.ox] = self.history
@@ -230,7 +243,7 @@ All IBA parties are listed.  All other persons have no zm.
 
 
         if len(sores) > 0:
-            hdr = self.now.strftime(datefmt).ljust(27) + self.person + ' '
+            hdr = self.now.strftime(self.datefmt).ljust(27) + self.person + ' '
             hdr2 = '\n' + ' ' * len(hdr)
             self.history += '\n' + hdr + hdr2.join(sores)
 
@@ -240,25 +253,27 @@ All IBA parties are listed.  All other persons have no zm.
 
 
 
-def main_agi():
+def main_agi(dry=False, nochange=False):
     report = iba_report()
     report.read_all()
 
-    report.test_retrieve_now()
-
-    report.person = raw_input('Person> ')
-    while True:
-        line = raw_input()
-        if line == '': break
-        report.transact(*line.strip().split())
-
+    if not nochange:
+        report.retrieve_now()
+        report.person = raw_input('Person> ')
+        while True:
+            line = raw_input()
+            if line == '': break
+            report.transact(*line.strip().split())
+        report.finish_transactions()
 
     report.write_all()
-
     export = report.export()
-    print export
-    #shutil.copy('iba.txt', 'iba.txt.old')
-    #open('iba.txt', 'w').write(export)
+
+    if dry:
+        print export
+    else:
+        shutil.copy('iba.txt', 'iba.txt.old')
+        open('iba.txt', 'w').write(export)
 
 def main_agdump():
     import json
@@ -268,13 +283,35 @@ def main_agdump():
     contract = re.sub(re.compile('^([XIV]+\. .*)$', re.M), '<b>\\1</b>', contract)
     json.dump((report.rates, report.prev, sorted(report.holdings.keys(), key=str.lower), sorted(report.rdict.keys(), key=lambda a: -report.rdict[a]), contract, report.holdings), sys.stdout)
 
+def main_rehash():
+    report = iba_report()
+    report.read_all()
+    actions = report.parse_history(limit=False, want_actions=True)
+    zm = {}
+    for actor, amt in actions:
+        print (actor, amt)
+        zm[actor] = zm.get(actor, 0) + amt
+    print sorted(zm.items(), key=lambda a: a[0].lower())
+
 if __name__ == '__main__':
     from optparse import OptionParser
 
     parser = OptionParser()
     parser.set_defaults(mode="agi")
-    parser.add_option("--agi", default=True, action="store_const", dest="mode", const="agi")
-    parser.add_option("--agdump", default=True, action="store_const", dest="mode", const="agdump")
+    
+    parser.add_option("--agi", action="store_const", dest="mode", const="agi")
+    parser.add_option("--agdump", action="store_const", dest="mode", const="agdump")
+    parser.add_option("--rehash", action="store_const", dest="mode", const="rehash")
+
+    parser.add_option("-d", "--dry-run", action="store_true", dest="dry", default=False)
+    parser.add_option("-n", "--no-change", action="store_true", dest="nochange", default=False)
     
     options, args = parser.parse_args()
-    {'agi': main_agi, 'agdump': main_agdump}[options.mode]()
+    
+    if options.mode == 'agi':
+        main_agi(options.dry, options.nochange)
+    elif options.mode == 'agdump':
+        main_agdump()
+    elif options.mode == 'rehash':
+        main_rehash()
+    else: raise
