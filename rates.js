@@ -153,13 +153,14 @@ parties.onchange = function() {
     updateBob();
 }
 fixTotals();
-var lt = document.getElementById('lt');
+var ltcont = document.getElementById('ltcont');
+var ltfake = document.getElementById('ltfake');
 var tab = document.getElementById('tab');
 var aaa = document.getElementById('aaa');
 function fixLeft() {
-    lt.style.left = tab.clientWidth + 15 + 'px';
-    lt.style.top = aaa.offsetTop + tab.offsetTop;
-    lt.className = 'lt';
+    ltcont.style.left = tab.clientWidth + 15 + 'px';
+    ltcont.style.top = aaa.offsetTop + tab.offsetTop;
+    ltcont.className = 'ltcont';
 }
 fixLeft();
 window.onload = fixLeft;

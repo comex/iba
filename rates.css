@@ -1,5 +1,6 @@
 body {
     background-color: #424242;
+    color: #81ffa5;
     font-family: Verdana;
     font-size: 11px;
 }
@@ -85,15 +86,28 @@ body {
     font-weight: bold;
     color: #f7a9af;
 }
-div.lt {
+div.ltcont {
     position: fixed;
-    top: 27px;
+}
+div#lt {
     background-color: #606060;
     color: #ffa9af;
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     padding: 5px; 
+}
+div#ltfake {
+    position: absolute;
+    top: 50px;
+    background-color: red;
+    z-index: 100;
+}
+div#update {
+    position: fixed;
+    bottom: 3px;
+    right: 3px;
+    color: #dd898f;
 }
 div#row {
     margin-bottom: 3px;

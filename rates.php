@@ -52,6 +52,8 @@ foreach($rates as $rate) {
 }
 ?>
 </table>
+<div id="update">as of <?php echo gmstrftime('%d %b %Y', filemtime('iba.txt')); ?></div>
+<div id="ltcont">
 <div id="lt">
 Player: 
 <select name="parties" id="parties">
@@ -73,6 +75,7 @@ Now: <span id="now"><?php echo $holdings->$loser; ?>zm</span><br>
 Change: <span id="total">--</span><br>
 <textarea id="stuff">
 </textarea>
+</div>
 </div>
 <script>
 var data = <?php echo json_encode($data); ?>;
