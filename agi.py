@@ -45,7 +45,7 @@ abbrevs = {
 
     'Absolv-o-Matic': 'AoM',
     'Stool Pigeon': 'SP',
-    'Drop your Wea..': 'DyW',
+    'Drop your Weapon': 'DyW',
     'Discard Picking': 'DP',
     'Justice Ball': 'J.Ball',
     'Penalty Box': 'PB',
@@ -111,6 +111,7 @@ All IBA parties are listed.  All other persons have no zm.
             if re.search('[0-9]', rate):
                 r = re.split('   +', rate)
                 r = map(str.strip, (rate[:16], rate[16:30], rate[30:]))
+                if r[0] == 'Drop your Wea..': r[0] = 'Drop your Weapon'
                 r = [r[0], int(r[1]), int(r[2]) if r[2] != '' else 0]
                 rates.append(r)
                 rdict[r[0]] = r[1]
@@ -120,10 +121,16 @@ All IBA parties are listed.  All other persons have no zm.
         self.rdict = rdict
     
     def write_rates(self):
-        self.sections[2+self.ox] = '\n'.join(i if isinstance(i, basestring) else (i[0].ljust(16) + str(i[1]).ljust(14) + (str(i[2]) * (i[2] != 0))).rstrip() for i in self.rates)
+        a = []
+        for i in self.rates:
+            if isinstance(i, basestring):
+                a.append(i)
+            else:
+                if i[0] == 'Drop your Weapon': i[0] = 'Drop your Wea..'
+                a.append( (i[0].ljust(16) + str(i[1]).ljust(14) + str(i[2]) * (i[2] != 0)).rstrip() )
+        self.sections[2+self.ox] = '\n'.join(a)
 
     def lookup_rate(self, x, change_amt=0):
-        if x == 'Drop your Weapon': x = 'Drop your Wea..'
         for a in self.rates:
             if type(a) == list and a[0] == x:
                 a[2] = a[2] + change_amt

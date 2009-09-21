@@ -88,6 +88,7 @@ function fixTotals() {
     var total = 0;
     var yes = false;
     var md; for(var e = 0; md = order[e]; e++) {
+        console.log(md);
         var minev = data[md][3];
         if(minev == 0) continue;
         var rate = data[md][1];
