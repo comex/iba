@@ -181,7 +181,8 @@ All IBA parties are listed.  All other persons have no zm.
                     else:
                         p = 1
                     prev[actor] = prev.get(actor, 0) + p
-
+            elif line[0] == '-':
+                pass
             else:
                 actor = line
 
@@ -202,7 +203,7 @@ All IBA parties are listed.  All other persons have no zm.
     def retrieve_now(self):
         vr = sys.stdin.read()
         lines = vr.split('\n')
-        dt = [lines[i+1] for i in xrange(len(lines)) if lines[i].find('by yzma.clarkk.net') != -1 or lines[i].find('by pzk37') != -1][0]
+        dt = [lines[i+1] for i in xrange(len(lines)) if lines[i].find('by yzma.clarkk.net') != -1 or lines[i].find('by pzk37') != -1 or lines[i].find('by yoyo') != -1][0]
         self.now = datetime.datetime.utcfromtimestamp(email.Utils.mktime_tz(email.Utils.parsedate_tz(dt[dt.index(';')+2:])))
     
 
@@ -235,7 +236,7 @@ All IBA parties are listed.  All other persons have no zm.
                 erate = round(rmul * self.lookup_rate(ast, 1 if typ == 'deposit' else -1))
                 self.holdings[self.person] = self.holdings.get(self.person, 0) + int(erate)
                 total += int(erate)
-                if self.holdings[self.person] < 0: raise ValueError(self.holdings[self.person])
+                if self.holdings[self.person] < 0: raise ValueError((self.holdings[self.person], self.person))
         total = ('+' * (typ == 'deposit')) + str(total) + 'zm'
         self.totals.append((total, sore))
 
