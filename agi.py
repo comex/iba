@@ -113,6 +113,7 @@ All IBA parties are listed.  All other persons have no zm.
                 r = map(str.strip, (rate[:16], rate[16:30], rate[30:]))
                 if r[0] == 'Drop your Wea..': r[0] = 'Drop your Weapon'
                 r = [r[0], int(r[1]), int(r[2]) if r[2] != '' else 0]
+                r.append(r[2])
                 rates.append(r)
                 rdict[r[0]] = r[1]
             else:
@@ -134,7 +135,8 @@ All IBA parties are listed.  All other persons have no zm.
         for a in self.rates:
             if type(a) == list and a[0] == x:
                 a[2] = a[2] + change_amt
-                assert a[2] >= 0
+                if a[2] < 0:
+                    raise ValueError('I ran out of %s (there were only %d)' % (x, a[3]))
                 return a[1]
         raise KeyError(x)
     

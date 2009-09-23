@@ -12,11 +12,11 @@ Current Holdings:
 Nickname                     zm
 ---------------------------------
 *BobTHJ                      764
-*comex                       556
+*comex                       806
 *coppro                      40
 *Murphy                      270
-*Pavitra                     779
-*Taral                       1280
+*Pavitra                     529
+*Taral                       1258
 Tiger                        97
 *Walker                      345
 *woggle                      447
@@ -30,8 +30,9 @@ All IBA parties are listed.  All other persons have no zm.
 
 Unfilled Offers (can be filled by announcement):
 
+* BobTHJ  [500zm]:    Write an apology for CFJ 2684
 * Pavitra [250zm] x2: Play Lobbyist, specifying Pavitra.
-* Pavitra [500zm]: (selling Minister without Portfolio)
+* Pavitra [500zm]:    (selling Minister without Portfolio)
 
 (ISELL votes not included.)
 
@@ -44,7 +45,7 @@ asset           rate (zm)    # in bank
 
 -- AAA
 0 Crop          11            13
-1 Crop          11            2
+1 Crop          11
 2 Crop          45
 3 Crop          21            9
 4 Crop          23
@@ -61,10 +62,10 @@ Roll Call       20            15
 Debate-o-Matic  20            4
 Arm-twist       45            13
 On the Nod      45            3
-Kill Bill       110           3
+Kill Bill       110           5
 Lobbyist        110
 Local Election  110
-No Confidence   55            2
+No Confidence   55            3
 Goverment Ball  500
 
 -- Cards (Change)
@@ -128,7 +129,7 @@ History:
 01 September 2009 03:37:03 coppro +520zm (4*WRV)
 01 September 2009 21:24:04 Taral +45zm (At)
 03 September 2009 16:39:04 Wooble +481zm (4*KB, OtN)
-03 September 2009 19:06:03 comex +540zm (2*Lob, LE, KB, NC)
+03 September 2009 19:06:03 comex +540zm (2*Lob, LE, KB, 2*NC)
                                   -46zm (2*Com)
 03 September 2009 19:51:04 woggle +90zm (2*AoM)
 03 September 2009 23:14:03 Pavitra +151zm (2*AoM, DoM, At)
@@ -155,7 +156,10 @@ History:
 15 September 2009 15:39:06 Tiger  -60zm (2*Com)
                                  -220zm (2*KB)
 17 September 2009 20:46:07 Taral +400zm (4*Xc)
-21 September 2009 21:48:08 Taral +400zm (4*Xc)
+21 September 2009 21:48:08 Taral  -22zm (2*1c)
+                                 +400zm (4*Xc)
+23 September 2009 17:13:18 Pavitra -250zm
+                           comex   +250zm [play Lob.]
 
 ===============================================================================
 
