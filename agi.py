@@ -58,14 +58,19 @@ abbrevs = {
     'Medal': 'Medal',
 }
 abbrevs2 =  dict(((v, k) for k, v in abbrevs.items()))
+iba_txt_file = 'iba.txt'
+iba_txt_format = 2
 
 class iba_report:
     DELIM = '\n\n===============================================================================\n\n'
     datefmt = '%d %B %Y %H:%M:%S'
     prev2rate = [1.00, 1.00, 1.00, 1.00, 0.90, 0.90, 0.90, 0.80, 0.80, 0.80, 0.73, 0.62, 0.50, 0.38, 0.26, 0.18, 0.12, 0.08, 0.05, 0.03, 0.01]
-    def __init__(self, name='iba.txt'):
-        iba = open(name).read().strip()
+    def __init__(self):
+        global iba_txt_file
+        name = iba_txt_file
+        iba = '\n' + open(name).read().strip()
         self.sections = iba.split(self.DELIM)
+        self.sections.pop(0)
         self.ox = int('Offers' in self.sections[2])
         self.totals = []
 
@@ -113,7 +118,10 @@ All IBA parties are listed.  All other persons have no zm.
         for rate in self.sections[2+self.ox].split('\n'):
             if re.search('[0-9]', rate):
                 r = re.split('   +', rate)
-                r = map(str.strip, (rate[:16], rate[16:30], rate[30:]))
+                if iba_txt_format == 1:
+                    r = map(str.strip, (rate[:12], rate[12:26], rate[26:]))
+                else:
+                    r = map(str.strip, (rate[:16], rate[16:30], rate[30:]))
                 if r[0] == 'Drop your Wea..': r[0] = 'Drop your Weapon'
                 r = [r[0], int(r[1]), int(r[2]) if r[2] != '' else 0]
                 r.append(r[2])
@@ -175,7 +183,10 @@ All IBA parties are listed.  All other persons have no zm.
 
         for line in history.split('\n'):
             if line.startswith('*'): continue
-            a, b = line[:27].strip(), line[27:].strip()
+            if iba_txt_format == 1:
+                a, b = line[:24].strip(), line[24:].strip()
+            else:
+                a, b = line[:27].strip(), line[27:].strip()
             if a != '' and a != 'History:' and '[' not in a:
                 when = datetime.datetime.strptime(a, self.datefmt)
             if b != '' and (not limit or when >= monday):
@@ -212,9 +223,9 @@ All IBA parties are listed.  All other persons have no zm.
                 mms = re.split('([\+-])', m)
                 for i in xrange(1, len(mms), 2):
                     sign = mms[i]
+                    assert sign in ('-', '+')
                     mm = mms[i+1]
-                    for mmm in re.split('[ ,]+', mm):
-                        assert sign in ('-', '+')
+                    for mmm in re.split('[ ,]+', mm.strip()):
                         p, q = self.parse_times(mmm, True)
                         holdings[q] = holdings.get(q, 0) + (-1 if sign == '-' else 1) * p
             return holdings
@@ -359,8 +370,14 @@ if __name__ == '__main__':
 
     parser.add_option("-d", "--dry-run", action="store_true", dest="dry", default=False)
     parser.add_option("-n", "--no-change", action="store_true", dest="nochange", default=False)
-    
+
+    parser.add_option("-f", "--file", action="store", type="string", dest="filename", default="iba.txt")
+    parser.add_option("-t", "--format", action="store", type="int", dest="format", default=2)
+
     options, args = parser.parse_args()
+
+    iba_txt_file = options.filename
+    iba_txt_format = options.format
     
     if options.mode == 'agi':
         main_agi(options.dry, options.nochange)
