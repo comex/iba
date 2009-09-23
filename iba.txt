@@ -16,7 +16,7 @@ Nickname                     zm
 *coppro                      40
 *Murphy                      270
 *Pavitra                     529
-*Taral                       1258
+*Taral                       1178
 Tiger                        97
 *Walker                      345
 *woggle                      447
@@ -59,7 +59,7 @@ WRV             130           9
 
 -- Cards (Government)
 Roll Call       20            15
-Debate-o-Matic  20            4
+Debate-o-Matic  20
 Arm-twist       45            13
 On the Nod      45            3
 Kill Bill       110           5
@@ -160,6 +160,9 @@ History:
                                  +400zm (4*Xc)
 23 September 2009 17:13:18 Pavitra -250zm
                            comex   +250zm [play Lob.]
+[unknown time]             [IBA -4*1c, 2*3c, 3*7c, 4*9c
+                                +3*Xc, 4*6c]
+23 September 2009 18:50:09 Taral -80zm (4*DoM)
 
 ===============================================================================
 

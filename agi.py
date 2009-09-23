@@ -11,6 +11,9 @@ def wrap(text, width):
                    word),
                   text.split(' ')
                  )
+aliases = {
+    'C-walker': 'Walker',
+}
 abbrevs = {
     '0 Crop': '0c',
     '1 Crop': '1c',
@@ -142,13 +145,27 @@ All IBA parties are listed.  All other persons have no zm.
     
     def read_history(self):
         self.history = self.sections[3+self.ox]
+    
+    def parse_times(self, n, translate=True):
+        # Parsers something like 5*Xc and returns ('X crop', 5)
+        n = n.strip().split('*')
+        if len(n) > 1:
+            p = int(n[0])
+            q = n[1]
+        else:
+            p = 1
+            q = n[0]
+        if translate: q = abbrevs2.get(q, q)
+        return p, q
 
-    def parse_history(self, limit=True, want_actions=False):
+    def parse_history(self, limit=True, want_actions=False, want_holdings=False):
         if limit:
             monday = datetime.datetime.utcnow()
             monday = (monday - datetime.timedelta(days=monday.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
         if want_actions:
             actions = []
+        elif want_holdings:
+            holdings = {}
 
         hist = ''
         when = None
@@ -173,16 +190,15 @@ All IBA parties are listed.  All other persons have no zm.
             if want_actions and line[0] in ('+', '-'):
                 amt = int(line[:line.find('zm')])
                 actions.append((actor, amt))
-            if line[0] == '+':
+            if line[0] == '+' or (want_holdings and line[0] == '-'):
                 m = re.search('\((.*)\)', line)
                 if not m: continue
                 for n in m.group(1).split(','):
-                    n = n.strip().split('*')
-                    if len(n) > 1:
-                        p = int(n[0])
-                    else:
-                        p = 1
-                    prev[actor] = prev.get(actor, 0) + p
+                    p, q = self.parse_times(n, want_holdings)
+                    if want_holdings:
+                        holdings[q] = holdings.get(q, 0) + (-1 if line[0] == '-' else 1) * p
+                    if line[0] == '+':
+                        prev[actor] = prev.get(actor, 0) + p
             elif line[0] == '-':
                 pass
             else:
@@ -191,6 +207,17 @@ All IBA parties are listed.  All other persons have no zm.
         self.prev = prev
         if want_actions:
             return actions
+        elif want_holdings:
+            for m in re.findall(re.compile('\[IBA ([^\]]*)\]', re.S), self.history):
+                mms = re.split('([\+-])', m)
+                for i in xrange(1, len(mms), 2):
+                    sign = mms[i]
+                    mm = mms[i+1]
+                    for mmm in re.split('[ ,]+', mm):
+                        assert sign in ('-', '+')
+                        p, q = self.parse_times(mmm, True)
+                        holdings[q] = holdings.get(q, 0) + (-1 if sign == '-' else 1) * p
+            return holdings
 
     def write_history(self):
         self.sections[3+self.ox] = self.history
@@ -300,8 +327,24 @@ def main_rehash():
     zm = {}
     for actor, amt in actions:
         print (actor, amt)
+        actor = aliases.get(actor, actor)
         zm[actor] = zm.get(actor, 0) + amt
     print sorted(zm.items(), key=lambda a: a[0].lower())
+    assert zm == report.holdings
+
+def main_rehash2():
+    report = iba_report()
+    report.read_all()
+    holdings = report.parse_history(limit=False, want_holdings=True)
+    for a in report.rates:
+        if type(a) == list:
+            ast = a[0]
+            mine = holdings.get(ast, 0)
+            reports = a[2]
+            if reports != mine:
+                print '! %s report:%d mine:%d' % (ast, reports, mine)
+
+    print holdings
 
 if __name__ == '__main__':
     from optparse import OptionParser
@@ -312,6 +355,7 @@ if __name__ == '__main__':
     parser.add_option("--agi", action="store_const", dest="mode", const="agi")
     parser.add_option("--agdump", action="store_const", dest="mode", const="agdump")
     parser.add_option("--rehash", action="store_const", dest="mode", const="rehash")
+    parser.add_option("--rehash2", action="store_const", dest="mode", const="rehash2")
 
     parser.add_option("-d", "--dry-run", action="store_true", dest="dry", default=False)
     parser.add_option("-n", "--no-change", action="store_true", dest="nochange", default=False)
@@ -324,4 +368,6 @@ if __name__ == '__main__':
         main_agdump()
     elif options.mode == 'rehash':
         main_rehash()
+    elif options.mode == 'rehash2':
+        main_rehash2()
     else: raise

@@ -12,11 +12,11 @@ Current Holdings:
 Nickname                     zm
 ---------------------------------
 *BobTHJ                      764
-*comex                       556
+*comex                       806
 *coppro                      40
 *Murphy                      270
-*Pavitra                     779
-*Taral                       1280
+*Pavitra                     529
+*Taral                       1258
 Tiger                        97
 *Walker                      345
 *woggle                      447
@@ -30,9 +30,9 @@ All IBA parties are listed.  All other persons have no zm.
 
 Unfilled Offers (can be filled by announcement):
 
-* BobTHJ  [500zm]:    Write an apology for CFJ 2684
-* Pavitra [250zm] x2: Play Lobbyist, specifying Pavitra.
-* Pavitra [500zm]:    (selling Minister without Portfolio)
+* BobTHJ  [500zm]: Write an apology for CFJ 2684
+* Pavitra [250zm]: Play Lobbyist, specifying Pavitra.
+* Pavitra [500zm]: (selling Minister without Portfolio)
 
 (ISELL votes not included.)
 
@@ -45,7 +45,7 @@ asset           rate (zm)    # in bank
 
 -- AAA
 0 Crop          11            13
-1 Crop          11            2
+1 Crop          11
 2 Crop          45
 3 Crop          21            9
 4 Crop          23
@@ -156,7 +156,12 @@ History:
 15 September 2009 15:39:06 Tiger  -60zm (2*Com)
                                  -220zm (2*KB)
 17 September 2009 20:46:07 Taral +400zm (4*Xc)
-21 September 2009 21:48:08 Taral +400zm (4*Xc)
+21 September 2009 21:48:08 Taral  -22zm (2*1c)
+                                 +400zm (4*Xc)
+23 September 2009 17:13:18 Pavitra -250zm
+                           comex   +250zm [play Lob.]
+[unknown time]             [IBA -4*1c, 2*3c, 3*7c, 4*9c
+                                +3*Xc, 4*6c]
 
 ===============================================================================
 
