@@ -30,9 +30,9 @@ All IBA parties are listed.  All other persons have no zm.
 
 Unfilled Offers (can be filled by announcement):
 
-* BobTHJ  [500zm]:    Write an apology for CFJ 2684
-* Pavitra [250zm] x2: Play Lobbyist, specifying Pavitra.
-* Pavitra [500zm]:    (selling Minister without Portfolio)
+* BobTHJ  [500zm]: Write an apology for CFJ 2684
+* Pavitra [250zm]: Play Lobbyist, specifying Pavitra.
+* Pavitra [500zm]: (selling Minister without Portfolio)
 
 (ISELL votes not included.)
 
