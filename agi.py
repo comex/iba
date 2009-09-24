@@ -68,7 +68,7 @@ class iba_report:
     def __init__(self):
         global iba_txt_file
         name = iba_txt_file
-        iba = '\n' + open(name).read().strip()
+        iba = '\n\n' + open(name).read().strip()
         self.sections = iba.split(self.DELIM)
         self.sections.pop(0)
         self.ox = int('Offers' in self.sections[2])
@@ -281,6 +281,9 @@ All IBA parties are listed.  All other persons have no zm.
         self.totals.append((total, sore))
 
     def finish_transactions(self):
+        if len(self.totals) == 0:
+            print 'Warning: no transactions'
+            return
         sores = []
         max_total_length = max(len(a[0]) for a in self.totals)
         for total, sore in self.totals:
@@ -297,7 +300,7 @@ All IBA parties are listed.  All other persons have no zm.
 
     
     def export(self):
-        return self.DELIM.join(self.sections) + '\n'
+        return self.DELIM.lstrip() + self.DELIM.join(self.sections) + '\n'
 
 
 
