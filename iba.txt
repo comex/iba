@@ -18,7 +18,7 @@ Nickname                     zm
 *Pavitra                     609
 *Taral                       1178
 Tiger                        97
-*Walker                      345
+*Walker                      701
 *woggle                      447
 Wooble                       30
 
@@ -54,11 +54,11 @@ asset           rate (zm)    # in bank
 7 Crop          19
 8 Crop          12
 9 Crop          11            8
-X Crop          100           23
+X Crop          100           26
 WRV             130           3
 
 -- Cards (Government)
-Roll Call       20            15
+Roll Call       20            18
 Debate-o-Matic  20            4
 Arm-twist       45            13
 On the Nod      45            6
@@ -166,6 +166,7 @@ History:
 24 September 2009 03:17:20 Pavitra +80zm (4*DoM)
 29 September 2009 16:14:12 Wooble +628zm (2*KB, 3*Xc, 3*OtN)
                                   -780zm (6*WRV)
+29 September 2009 17:49:11 Walker +356zm (3*Xc, 3*RC)
 
 ===============================================================================
 
