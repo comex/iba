@@ -65,7 +65,7 @@ class iba_report:
     DELIM = '\n\n===============================================================================\n\n'
     datefmt = '%d %B %Y %H:%M:%S'
     prev2rate = [1.00, 1.00, 1.00, 1.00, 0.90, 0.90, 0.90, 0.80, 0.80, 0.80, 0.73, 0.62, 0.50, 0.38, 0.26, 0.18, 0.12, 0.08, 0.05, 0.03, 0.01]
-    def __init__(self):
+    def __init__(self, dry=False):
         global iba_txt_file
         name = iba_txt_file
         iba = '\n\n' + open(name).read().strip()
@@ -73,6 +73,7 @@ class iba_report:
         self.sections.pop(0)
         self.ox = int('Offers' in self.sections[2])
         self.totals = []
+        self.dry = dry
 
     def read_all(self):
         self.read_holdings()
@@ -241,6 +242,8 @@ All IBA parties are listed.  All other persons have no zm.
         self.now = datetime.datetime.utcnow()
 
     def retrieve_now(self):
+        if self.dry:
+            return self.test_retrieve_now()
         vr = sys.stdin.read()
         lines = vr.split('\n')
         dt = [lines[i+1] for i in xrange(len(lines)) if lines[i].find('by yzma.clarkk.net') != -1 or lines[i].find('by pzk37') != -1 or lines[i].find('by yoyo') != -1][0]
@@ -305,7 +308,7 @@ All IBA parties are listed.  All other persons have no zm.
 
 
 def main_agi(dry=False, nochange=False):
-    report = iba_report()
+    report = iba_report(dry)
     report.read_all()
 
     if not nochange:

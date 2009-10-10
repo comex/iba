@@ -11,14 +11,15 @@ Current Holdings:
 
 Nickname                     zm
 ---------------------------------
-*BobTHJ                      764
+ais523                       500
+*BobTHJ                      1109
 *comex                       806
-*coppro                      40
+*coppro                      349
 *Murphy                      270
 *Pavitra                     609
 *Taral                       1178
-Tiger                        97
-*Walker                      345
+*Tiger                       97
+*Walker                      701
 *woggle                      447
 Wooble                       30
 
@@ -30,9 +31,18 @@ All IBA parties are listed.  All other persons have no zm.
 
 Unfilled Offers (can be filled by announcement):
 
-* BobTHJ  [500zm]: Write an apology for CFJ 2684
-* Pavitra [250zm]: Play Lobbyist, specifying Pavitra.
-* Pavitra [500zm]: (selling Minister without Portfolio)
+BUY [you pay zm]
+      Offerer  Cost     Selling
+      Pavitra  500zm     Minister without Portfolio
+
+SELL [you get zm]
+      Offerer  Selling   Cost
+      BobTHJ   500zm     Write an apology for CFJ 2684
+ [x3] BobTHJ   125zm     Play Lobbyist, specifying BobTHJ
+ [x3] BobTHJ   100zm     Play Absolv-o-Matic, specifying BobTHJ
+      Pavitra  250zm     Play Lobbyist, specifying Pavitra
+[x10] woggle   20zm      7 Crop
+ [x6] woggle   14zm      8 Crop
 
 (ISELL votes not included.)
 
@@ -54,23 +64,23 @@ asset           rate (zm)    # in bank
 7 Crop          19
 8 Crop          12
 9 Crop          11            8
-X Crop          100           23
+X Crop          100           26
 WRV             130           3
 
 -- Cards (Government)
-Roll Call       20            15
+Roll Call       20            18
 Debate-o-Matic  20            4
 Arm-twist       45            13
 On the Nod      45            6
 Kill Bill       110           7
-Lobbyist        110
+Lobbyist        110           4
 Local Election  110
 No Confidence   55            3
-Goverment Ball  500
+Goverment Ball  500           1
 
 -- Cards (Change)
 Distrib-u-Matic 25
-Committee       30
+Committee       30            2
 Your Turn       30
 Presto!         150
 Not Your Turn   250
@@ -81,7 +91,7 @@ Change Ball     500
 -- Cards (Justice)
 Absolv-o-Matic  45
 Stool Pigeon    40
-Drop your Wea.. 80
+Drop your Wea.. 80            2
 Discard Picking 130
 Justice Ball    500
 Penalty Box     175
@@ -166,6 +176,17 @@ History:
 24 September 2009 03:17:20 Pavitra +80zm (4*DoM)
 29 September 2009 16:14:12 Wooble +628zm (2*KB, 3*Xc, 3*OtN)
                                   -780zm (6*WRV)
+29 September 2009 17:49:11 Walker +60zm (3*RC)
+07 October 2009 16:32:03   coppro +309zm (2*DyW, AoM, SP, 2*Com)
+07 October 2009 16:59:04   [IBA -G.Ball]
+                           ais523 +500zm (G.Ball)
+07 October 2009 21:24:05   BobTHJ -45zm (AoM)
+08 October 2009 16:02:04   BobTHJ +440zm (4*Lob)
+                                   -50zm (SP)
+08 October 2009 16:18:27   BobTHJ -100zm
+                           Tiger  +100zm [play AoM]
+08 October 2009 20:21:25   BobTHJ -100zm
+                           Walker +100zm [play AoM]
 
 ===============================================================================
 

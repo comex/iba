@@ -52,7 +52,7 @@ while($line = fgets($fp)) {
         
     
     $p = strtolower(trim(substr($line, 0, 19)));
-    $stuff = preg_split('/\s+/', substr($line, 19));
+    $stuff = preg_split('/\s+/', trim(substr($line, 19)));
     $ar = array('0 crop', '1 crop', '2 crop', '3 crop', '4 crop', '5 crop', '6 crop', '7 crop', '8 crop', '9 crop', 'x crop', 'wrv');
     for($i = 0; $i < count($ar); $i++) {
         $cards[$p][$ar[$i]] = intval($stuff[$i]);
