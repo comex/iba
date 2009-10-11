@@ -1,7 +1,7 @@
 ===============================================================================
 
 Industrial Bank & Agora Report
-Date of this report: 29 August 2009
+Date of this report: 9 October 2009
 
 President of the IBA: comex
 
@@ -12,14 +12,14 @@ Current Holdings:
 Nickname                     zm
 ---------------------------------
 ais523                       500
-*BobTHJ                      1109
+BobTHJ                       649
 *comex                       806
 *coppro                      349
 *Murphy                      270
 *Pavitra                     609
 *Taral                       1178
-*Tiger                       97
-*Walker                      701
+*Tiger                       197
+*Walker                      505
 *woggle                      447
 Wooble                       30
 
@@ -64,11 +64,11 @@ asset           rate (zm)    # in bank
 7 Crop          19
 8 Crop          12
 9 Crop          11            8
-X Crop          100           26
+X Crop          100           23
 WRV             130           3
 
 -- Cards (Government)
-Roll Call       20            18
+Roll Call       20            5
 Debate-o-Matic  20            4
 Arm-twist       45            13
 On the Nod      45            6
@@ -180,6 +180,7 @@ History:
 07 October 2009 16:32:03   coppro +309zm (2*DyW, AoM, SP, 2*Com)
 07 October 2009 16:59:04   [IBA -G.Ball]
                            ais523 +500zm (G.Ball)
+07 October 2009 20:35:03   BobTHJ -260zm (13*RC)
 07 October 2009 21:24:05   BobTHJ -45zm (AoM)
 08 October 2009 16:02:04   BobTHJ +440zm (4*Lob)
                                    -50zm (SP)

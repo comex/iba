@@ -17,7 +17,7 @@ BobTHJ                       649
 *coppro                      349
 *Murphy                      270
 *Pavitra                     609
-*Taral                       1178
+*Taral                       1258
 *Tiger                       197
 *Walker                      505
 *woggle                      447
@@ -68,7 +68,7 @@ X Crop          100           23
 WRV             130           3
 
 -- Cards (Government)
-Roll Call       20            5
+Roll Call       20            9
 Debate-o-Matic  20            4
 Arm-twist       45            13
 On the Nod      45            6
@@ -188,6 +188,7 @@ History:
                            Tiger  +100zm [play AoM]
 08 October 2009 20:21:25   BobTHJ -100zm
                            Walker +100zm [play AoM]
+11 October 2009 17:51:04   Taral +80zm (4*RC)
 
 ===============================================================================
 
