@@ -13,8 +13,9 @@ Nickname                     zm
 ---------------------------------
 ais523                       500
 BobTHJ                       649
-*comex                       806
+*comex                       306
 *coppro                      349
+Darth Cliche                 500
 *Murphy                      270
 *Pavitra                     609
 *Taral                       1258
