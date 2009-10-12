@@ -191,6 +191,7 @@ History:
 11 October 2009 17:51:04   Taral +80zm (4*RC)
 12 October 2009 16:08:39   comex        -500zm
                            Darth Cliche +500zm [transfer]
+
 ===============================================================================
 
 Text of the contract:
