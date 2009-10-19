@@ -16,9 +16,9 @@ BobTHJ                       649
 *comex                       306
 *coppro                      349
 Darth Cliche                 500
-*Murphy                      270
+*Murphy                      460
 *Pavitra                     609
-*Taral                       1258
+*Taral                       868
 *Tiger                       197
 *Walker                      505
 *woggle                      447
@@ -66,21 +66,21 @@ asset           rate (zm)    # in bank
 8 Crop          12
 9 Crop          11            8
 X Crop          100           23
-WRV             130           3
+WRV             130
 
 -- Cards (Government)
 Roll Call       20            9
 Debate-o-Matic  20            4
-Arm-twist       45            13
-On the Nod      45            6
+Arm-twist       45            15
+On the Nod      45            7
 Kill Bill       110           7
 Lobbyist        110           4
 Local Election  110
-No Confidence   55            3
+No Confidence   55            4
 Goverment Ball  500           1
 
 -- Cards (Change)
-Distrib-u-Matic 25
+Distrib-u-Matic 55
 Committee       30            2
 Your Turn       30
 Presto!         150
@@ -192,6 +192,8 @@ History:
 11 October 2009 17:51:04   Taral +80zm (4*RC)
 12 October 2009 16:08:39   comex        -500zm
                            Darth Cliche +500zm [transfer]
+13 October 2009 09:00:05   Murphy +190zm (NC, OtN, 2*At)
+19 October 2009 04:54:07   Taral -390zm (3*WRV)
 
 ===============================================================================
 

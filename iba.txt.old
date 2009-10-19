@@ -13,11 +13,12 @@ Nickname                     zm
 ---------------------------------
 ais523                       500
 BobTHJ                       649
-*comex                       806
+*comex                       306
 *coppro                      349
-*Murphy                      270
+Darth Cliche                 500
+*Murphy                      460
 *Pavitra                     609
-*Taral                       1178
+*Taral                       1258
 *Tiger                       197
 *Walker                      505
 *woggle                      447
@@ -68,14 +69,14 @@ X Crop          100           23
 WRV             130           3
 
 -- Cards (Government)
-Roll Call       20            5
+Roll Call       20            9
 Debate-o-Matic  20            4
-Arm-twist       45            13
-On the Nod      45            6
+Arm-twist       45            15
+On the Nod      45            7
 Kill Bill       110           7
 Lobbyist        110           4
 Local Election  110
-No Confidence   55            3
+No Confidence   55            4
 Goverment Ball  500           1
 
 -- Cards (Change)
@@ -188,6 +189,10 @@ History:
                            Tiger  +100zm [play AoM]
 08 October 2009 20:21:25   BobTHJ -100zm
                            Walker +100zm [play AoM]
+11 October 2009 17:51:04   Taral +80zm (4*RC)
+12 October 2009 16:08:39   comex        -500zm
+                           Darth Cliche +500zm [transfer]
+13 October 2009 09:00:05   Murphy +190zm (NC, OtN, 2*At)
 
 ===============================================================================
 
