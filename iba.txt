@@ -40,7 +40,7 @@ SELL [you get zm]
       Offerer  Selling   Cost
       BobTHJ   500zm     Write an apology for CFJ 2684
  [x3] BobTHJ   125zm     Play Lobbyist, specifying BobTHJ
- [x3] BobTHJ   100zm     Play Absolv-o-Matic, specifying BobTHJ
+      BobTHJ   100zm     Play Absolv-o-Matic, specifying BobTHJ
       Pavitra  250zm     Play Lobbyist, specifying Pavitra
 [x10] woggle   20zm      7 Crop
  [x6] woggle   14zm      8 Crop
