@@ -18,11 +18,12 @@ BobTHJ                       649
 Darth Cliche                 500
 *Murphy                      460
 *Pavitra                     609
-*Taral                       1258
+PBA                           28
+*Taral                       478
 *Tiger                       197
-*Walker                      505
+*Walker                      840
 *woggle                      447
-Wooble                       30
+Wooble                         2
 
 * IBA party
 
@@ -34,13 +35,13 @@ Unfilled Offers (can be filled by announcement):
 
 BUY [you pay zm]
       Offerer  Cost     Selling
-      Pavitra  500zm     Minister without Portfolio
+      Pavitra  500zm    Minister without Portfolio
 
 SELL [you get zm]
       Offerer  Selling   Cost
       BobTHJ   500zm     Write an apology for CFJ 2684
  [x3] BobTHJ   125zm     Play Lobbyist, specifying BobTHJ
- [x3] BobTHJ   100zm     Play Absolv-o-Matic, specifying BobTHJ
+      BobTHJ   100zm     Play Absolv-o-Matic, specifying BobTHJ
       Pavitra  250zm     Play Lobbyist, specifying Pavitra
 [x10] woggle   20zm      7 Crop
  [x6] woggle   14zm      8 Crop
@@ -66,21 +67,21 @@ asset           rate (zm)    # in bank
 8 Crop          12
 9 Crop          11            8
 X Crop          100           23
-WRV             130           3
+WRV             130
 
 -- Cards (Government)
 Roll Call       20            9
 Debate-o-Matic  20            4
 Arm-twist       45            15
 On the Nod      45            7
-Kill Bill       110           7
-Lobbyist        110           4
+Kill Bill       110           8
+Lobbyist        110           3
 Local Election  110
-No Confidence   55            4
+No Confidence   55            3
 Goverment Ball  500           1
 
 -- Cards (Change)
-Distrib-u-Matic 25
+Distrib-u-Matic 55
 Committee       30            2
 Your Turn       30
 Presto!         150
@@ -193,6 +194,11 @@ History:
 12 October 2009 16:08:39   comex        -500zm
                            Darth Cliche +500zm [transfer]
 13 October 2009 09:00:05   Murphy +190zm (NC, OtN, 2*At)
+18 October 2009 09:45:06   Walker +500zm (3*WRV, KB)
+                                  -165zm (Lob, NC)
+19 October 2009 04:54:07   Taral -780zm (6*WRV)
+19 October 2009 19:50:20   Wooble -28zm
+                           PBA    +28zm [transfer]
 
 ===============================================================================
 

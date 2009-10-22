@@ -9,7 +9,7 @@ President of the IBA: comex
 
 Current Holdings:
 
-Nickname                     zm
+Nickname                      zm
 ---------------------------------
 ais523                       500
 BobTHJ                       649
@@ -18,11 +18,12 @@ BobTHJ                       649
 Darth Cliche                 500
 *Murphy                      460
 *Pavitra                     609
-*Taral                       868
+PBA                           28
+*Taral                       478
 *Tiger                       197
-*Walker                      505
+*Walker                      840
 *woggle                      447
-Wooble                       30
+Wooble                         2
 
 * IBA party
 
@@ -34,7 +35,7 @@ Unfilled Offers (can be filled by announcement):
 
 BUY [you pay zm]
       Offerer  Cost     Selling
-      Pavitra  500zm     Minister without Portfolio
+      Pavitra  500zm    Minister without Portfolio
 
 SELL [you get zm]
       Offerer  Selling   Cost
@@ -73,10 +74,10 @@ Roll Call       20            9
 Debate-o-Matic  20            4
 Arm-twist       45            15
 On the Nod      45            7
-Kill Bill       110           7
-Lobbyist        110           4
+Kill Bill       110           8
+Lobbyist        110           3
 Local Election  110
-No Confidence   55            4
+No Confidence   55            3
 Goverment Ball  500           1
 
 -- Cards (Change)
@@ -193,7 +194,11 @@ History:
 12 October 2009 16:08:39   comex        -500zm
                            Darth Cliche +500zm [transfer]
 13 October 2009 09:00:05   Murphy +190zm (NC, OtN, 2*At)
-19 October 2009 04:54:07   Taral -390zm (3*WRV)
+18 October 2009 09:45:06   Walker +500zm (3*WRV, KB)
+                                  -165zm (Lob, NC)
+19 October 2009 04:54:07   Taral -780zm (6*WRV)
+19 October 2009 19:50:20   Wooble -28zm
+                           PBA    +28zm [transfer]
 
 ===============================================================================
 

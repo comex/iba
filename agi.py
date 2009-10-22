@@ -104,14 +104,14 @@ class iba_report:
         self.sections[1] = '''
 Current Holdings:
 
-Nickname                     zm
+Nickname                      zm
 ---------------------------------
 %s
 
 * IBA party
 
 All IBA parties are listed.  All other persons have no zm.
-        '''.strip() % '\n'.join( (('*' if person in self.ibap else '') + person).ljust(29) + str(zm) for person, zm in sorted(self.holdings.items(), key=lambda a: a[0].lower()))
+        '''.strip() % '\n'.join( (('*' if person in self.ibap else '') + person).ljust(28) + str(zm).rjust(4) for person, zm in sorted(self.holdings.items(), key=lambda a: a[0].lower()))
 
     def read_rates(self):
         rates = []
