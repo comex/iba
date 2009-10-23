@@ -9,12 +9,12 @@ President of the IBA: comex
 
 Current Holdings:
 
-Nickname                     zm
+Nickname                      zm
 ---------------------------------
 ais523                       500
-BobTHJ                       649
+BobTHJ                       659
 *comex                       306
-*coppro                      349
+*coppro                      739
 Darth Cliche                 500
 *Murphy                      460
 *Pavitra                     609
@@ -39,7 +39,6 @@ BUY [you pay zm]
 
 SELL [you get zm]
       Offerer  Selling   Cost
-      BobTHJ   500zm     Write an apology for CFJ 2684
  [x3] BobTHJ   125zm     Play Lobbyist, specifying BobTHJ
       BobTHJ   100zm     Play Absolv-o-Matic, specifying BobTHJ
       Pavitra  250zm     Play Lobbyist, specifying Pavitra
@@ -75,10 +74,10 @@ Debate-o-Matic  20            4
 Arm-twist       45            15
 On the Nod      45            7
 Kill Bill       110           8
-Lobbyist        110           3
+Lobbyist        110           2
 Local Election  110
 No Confidence   55            3
-Goverment Ball  500           1
+Goverment Ball  500           2
 
 -- Cards (Change)
 Distrib-u-Matic 55
@@ -179,13 +178,14 @@ History:
 29 September 2009 16:14:12 Wooble +628zm (2*KB, 3*Xc, 3*OtN)
                                   -780zm (6*WRV)
 29 September 2009 17:49:11 Walker +60zm (3*RC)
+06 October 2009 19:07:03   coppro +500zm (G.Ball)
 07 October 2009 16:32:03   coppro +309zm (2*DyW, AoM, SP, 2*Com)
 07 October 2009 16:59:04   [IBA -G.Ball]
                            ais523 +500zm (G.Ball)
 07 October 2009 20:35:03   BobTHJ -260zm (13*RC)
 07 October 2009 21:24:05   BobTHJ -45zm (AoM)
 08 October 2009 16:02:04   BobTHJ +440zm (4*Lob)
-                                   -50zm (SP)
+                                   -40zm (SP)
 08 October 2009 16:18:27   BobTHJ -100zm
                            Tiger  +100zm [play AoM]
 08 October 2009 20:21:25   BobTHJ -100zm
@@ -199,6 +199,7 @@ History:
 19 October 2009 04:54:07   Taral -780zm (6*WRV)
 19 October 2009 19:50:20   Wooble -28zm
                            PBA    +28zm [transfer]
+21 October 2009 01:53:07   coppro -110zm (Lob)
 
 ===============================================================================
 

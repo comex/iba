@@ -43,11 +43,11 @@ abbrevs = {
     'Presto!': 'P!',
     'Not Your Turn': 'NYT',
     'Supersize Me': 'SM',
-    'Shrink Potion': 'SP',
+    'Shrink Potion': 'Sh.P',
     'Change Ball': 'C.Ball',
 
     'Absolv-o-Matic': 'AoM',
-    'Stool Pigeon': 'SP',
+    'Stool Pigeon': 'St.P',
     'Drop your Weapon': 'DyW',
     'Discard Picking': 'DP',
     'Justice Ball': 'J.Ball',
@@ -167,10 +167,16 @@ All IBA parties are listed.  All other persons have no zm.
         if translate: q = abbrevs2.get(q, q)
         return p, q
 
+    @staticmethod
+    def get_monday(day):
+        return (day - datetime.timedelta(days=day.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
+
     def parse_history(self, limit=True, want_actions=False, want_holdings=False):
         if limit:
             monday = datetime.datetime.utcnow()
-            monday = (monday - datetime.timedelta(days=monday.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
+            monday = self.get_monday(datetime.datetime.utcnow())
+        else:
+            monday = None
         if want_actions:
             actions = []
         elif want_holdings:
@@ -190,6 +196,7 @@ All IBA parties are listed.  All other persons have no zm.
                 a, b = line[:27].strip(), line[27:].strip()
             if a != '' and a != 'History:' and '[' not in a:
                 when = datetime.datetime.strptime(a, self.datefmt)
+                hist += '@' + a + '\n'
             if b != '' and (not limit or when >= monday):
                 hist += b + '\n' 
         hist = hist.replace(',\n', ', ')
@@ -199,21 +206,33 @@ All IBA parties are listed.  All other persons have no zm.
         for line in hist.split('\n'):
             line = line.strip()
             if line == '' or line[0] == '[': continue
+            if line[0] == '@':
+                when = datetime.datetime.strptime(line[1:], self.datefmt)
+                if not limit:
+                    mon = self.get_monday(when)
+                    if mon != monday:
+                        prev = {}
+                        monday = mon
+                continue
+            if line[0] == '+' or ((want_holdings or want_actions) and line[0] == '-'):
+                if want_actions:
+                    pc = prev.copy()
+                m = re.search('\((.*)\)', line)
+                if m:
+                    stuff = []
+                    for n in m.group(1).split(','):
+                        p, q = self.parse_times(n, want_holdings)
+                        stuff.append((p, q))
+                        if want_holdings:
+                            holdings[q] = holdings.get(q, 0) + (-1 if line[0] == '-' else 1) * p
+                        if line[0] == '+':
+                            prev[actor] = prev.get(actor, 0) + p
+                else:
+                    stuff = None
             if want_actions and line[0] in ('+', '-'):
                 amt = int(line[:line.find('zm')])
-                actions.append((actor, amt))
-            if line[0] == '+' or (want_holdings and line[0] == '-'):
-                m = re.search('\((.*)\)', line)
-                if not m: continue
-                for n in m.group(1).split(','):
-                    p, q = self.parse_times(n, want_holdings)
-                    if want_holdings:
-                        holdings[q] = holdings.get(q, 0) + (-1 if line[0] == '-' else 1) * p
-                    if line[0] == '+':
-                        prev[actor] = prev.get(actor, 0) + p
-            elif line[0] == '-':
-                pass
-            else:
+                actions.append((actor, amt, stuff, pc))
+            if line[0] not in ('+', '-'):
                 actor = line
 
         self.prev = prev
@@ -342,9 +361,27 @@ def main_rehash():
     report.read_all()
     actions = report.parse_history(limit=False, want_actions=True)
     zm = {}
-    for actor, amt in actions:
-        print (actor, amt)
+    for actor, amt, stuff, prev in actions:
+        #print (actor, amt, stuff, prev)
         actor = aliases.get(actor, actor)
+        if stuff is not None:
+            if amt < 0:
+                # withdrawal
+                k = -sum(report.lookup_rate(abbrevs2.get(b, b)) * a for a, b in stuff)
+            elif amt > 0:
+                # deposit
+                k = 0
+                for a, b in stuff:
+                    for i in xrange(a):
+                        p = prev.get(actor, 0)
+                        if p >= 21:
+                            rmul = 0
+                        else:
+                            rmul = report.prev2rate[p]
+                        prev[actor] = p + 1
+                        k += round(rmul * report.lookup_rate(abbrevs2.get(b, b)))
+            if k != amt:
+                print '** %s: price for %s = %s I get %s' % (actor, stuff, amt, k)
         zm[actor] = zm.get(actor, 0) + amt
     print sorted(zm.items(), key=lambda a: a[0].lower())
     assert zm == report.holdings
