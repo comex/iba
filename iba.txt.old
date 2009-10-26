@@ -14,7 +14,7 @@ Nickname                      zm
 ais523                       500
 BobTHJ                       659
 *comex                       306
-*coppro                      725
+*coppro                      615
 Darth Cliche                 500
 *Murphy                      460
 *Pavitra                     609
@@ -41,7 +41,6 @@ SELL [you get zm]
       Offerer  Selling   Cost
  [x3] BobTHJ   125zm     Play Lobbyist, specifying BobTHJ
       BobTHJ   100zm     Play Absolv-o-Matic, specifying BobTHJ
-      Pavitra  250zm     Play Lobbyist, specifying Pavitra
 [x10] woggle   20zm      7 Crop
  [x6] woggle   14zm      8 Crop
 
@@ -74,10 +73,10 @@ Debate-o-Matic  20            4
 Arm-twist       45            15
 On the Nod      45            7
 Kill Bill       110           8
-Lobbyist        110           2
+Lobbyist        110           1
 Local Election  110
 No Confidence   55            3
-Goverment Ball  500           2
+Goverment Ball  500           1
 
 -- Cards (Change)
 Distrib-u-Matic 55
@@ -200,6 +199,7 @@ History:
 19 October 2009 19:50:20   Wooble -28zm
                            PBA    +28zm [transfer]
 21 October 2009 01:53:07   coppro -110zm (Lob)
+23 October 2009 01:05:08   coppro -110zm (Lob)
 
 ===============================================================================
 

@@ -12,7 +12,7 @@ Current Holdings:
 Nickname                      zm
 ---------------------------------
 ais523                       500
-BobTHJ                       659
+BobTHJ                       579
 *comex                       306
 *coppro                      615
 Darth Cliche                 500
@@ -76,7 +76,7 @@ Kill Bill       110           8
 Lobbyist        110           1
 Local Election  110
 No Confidence   55            3
-Goverment Ball  500           2
+Goverment Ball  500           1
 
 -- Cards (Change)
 Distrib-u-Matic 55
@@ -91,7 +91,7 @@ Change Ball     500
 -- Cards (Justice)
 Absolv-o-Matic  45
 Stool Pigeon    40
-Drop your Wea.. 80            2
+Drop your Wea.. 80            1
 Discard Picking 130
 Justice Ball    500
 Penalty Box     175
@@ -200,6 +200,7 @@ History:
                            PBA    +28zm [transfer]
 21 October 2009 01:53:07   coppro -110zm (Lob)
 23 October 2009 01:05:08   coppro -110zm (Lob)
+26 October 2009 19:46:08   BobTHJ -80zm (DyW)
 
 ===============================================================================
 
