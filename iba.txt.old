@@ -12,17 +12,17 @@ Current Holdings:
 Nickname                      zm
 ---------------------------------
 ais523                       500
-BobTHJ                       579
-*comex                       276
-*coppro                      615
+BobTHJ                       759
+*comex                       196
+*coppro                      649
 Darth Cliche                 500
 *Murphy                      460
 *Pavitra                     609
 PBA                           28
 *Taral                       478
-*Tiger                       287
+*Tiger                       252
 *Walker                      840
-*woggle                      447
+*woggle                      413
 Wooble                         2
 
 * IBA party
@@ -39,10 +39,9 @@ BUY [you pay zm]
 
 SELL [you get zm]
       Offerer  Selling   Cost
- [x3] BobTHJ   125zm     Play Lobbyist, specifying BobTHJ
       BobTHJ   100zm     Play Absolv-o-Matic, specifying BobTHJ
-[x10] woggle   20zm      7 Crop
- [x6] woggle   14zm      8 Crop
+ [x8] woggle   20zm      7 Crop
+ [x4] woggle   14zm      8 Crop
 
 (ISELL votes not included.)
 
@@ -69,7 +68,7 @@ WRV             130
 
 -- Cards (Government)
 Debate-o-Matic  50            4
-On the Nod      15            15
+On the Nod      15            11
 Kill Bill       30            7
 No Confidence   100           3
 Extra Vote      58
@@ -201,8 +200,13 @@ History:
 21 October 2009 01:53:07   coppro -110zm (Lob)
 23 October 2009 01:05:08   coppro -110zm (Lob)
 26 October 2009 19:46:08   BobTHJ -80zm (DyW)
-27 October 2009 00:55:09   comex -30zm (KB)
-27 October 2009 17:39:10   Tiger +90zm (DuM)
+27 October 2009 00:55:09   comex -110zm (KB)
+27 October 2009 17:39:10   Tiger +55zm (DuM)
+27 October 2009 18:21:09   BobTHJ +180zm (4*OtN)
+31 October 2009 19:43:47   woggle -34zm
+                           coppro +34zm [7c, 8c]
+01 November 2009 01:12:31  woggle -34zm
+                           coppro +34zm [7c, 8c]
 
 ===============================================================================
 

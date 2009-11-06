@@ -36,6 +36,8 @@ abbrevs = {
     'Local Election': 'LE',
     'No Confidence': 'NC',
     'Goverment Ball': 'G.Ball',
+    'Extra Vote': 'EV',
+    'Cross the Lobby': 'CtL',
 
     'Distrib-u-Matic': 'DuM',
     'Committee': 'Com',
@@ -361,13 +363,17 @@ def main_rehash():
     report.read_all()
     actions = report.parse_history(limit=False, want_actions=True)
     zm = {}
+    N = 28 # skip old transactions which had different rates
     for actor, amt, stuff, prev in actions:
         #print (actor, amt, stuff, prev)
         actor = aliases.get(actor, actor)
         if stuff is not None:
             if amt < 0:
                 # withdrawal
-                k = -sum(report.lookup_rate(abbrevs2.get(b, b)) * a for a, b in stuff)
+                try:
+                    k = -sum(report.lookup_rate(abbrevs2.get(b, b)) * a for a, b in stuff)
+                except:
+                    k = None
             elif amt > 0:
                 # deposit
                 k = 0
@@ -379,11 +385,18 @@ def main_rehash():
                         else:
                             rmul = report.prev2rate[p]
                         prev[actor] = p + 1
-                        k += round(rmul * report.lookup_rate(abbrevs2.get(b, b)))
-            if k != amt:
-                print '** %s: price for %s = %s I get %s' % (actor, stuff, amt, k)
+                        try:
+                            k += round(rmul * report.lookup_rate(abbrevs2.get(b, b)))
+                        except:
+                            k = None
+            if k is not None and k != amt:
+                if N > 0:
+                    N -= 1
+                else:
+                    print '** %s: price for %s = %s I get %s' % (actor, stuff, amt, k)
         zm[actor] = zm.get(actor, 0) + amt
     print sorted(zm.items(), key=lambda a: a[0].lower())
+    assert N == 0
     assert zm == report.holdings
 
 def main_rehash2():
