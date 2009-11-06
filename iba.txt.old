@@ -14,15 +14,16 @@ Nickname                      zm
 ais523                       500
 BobTHJ                       759
 *comex                       196
-*coppro                      649
+*coppro                      933
 Darth Cliche                 500
 *Murphy                      460
-*Pavitra                     609
+*Pavitra                     359
 PBA                           28
 *Taral                       478
 *Tiger                       252
 *Walker                      840
-*woggle                      413
+Warrigal                     237
+*woggle                      379
 Wooble                         2
 
 * IBA party
@@ -53,22 +54,22 @@ asset           rate (zm)    # in bank
 -------------------------------------
 
 -- AAA
-0 Crop          11            13
+0 Crop          11            12
 1 Crop          11
-2 Crop          45
-3 Crop          21            9
+2 Crop          45            1
+3 Crop          21            7
 4 Crop          23
 5 Crop          27
-6 Crop          50            7
+6 Crop          50            8
 7 Crop          19
 8 Crop          12
-9 Crop          11            8
+9 Crop          11            7
 X Crop          100           23
 WRV             130
 
 -- Cards (Government)
 Debate-o-Matic  50            4
-On the Nod      15            11
+On the Nod      15            12
 Kill Bill       30            7
 No Confidence   100           3
 Extra Vote      58
@@ -77,9 +78,9 @@ Cross the Lobby 30
 Goverment Ball  500           1
 
 -- Cards (Change)
-Distrib-u-Matic 90            1
+Distrib-u-Matic 90            2
 Committee       35            2
-Your Turn       55
+Your Turn       55            2
 Presto!         500
 Not Your Turn   275
 Supersize Me    25
@@ -199,6 +200,8 @@ History:
                            PBA    +28zm [transfer]
 21 October 2009 01:53:07   coppro -110zm (Lob)
 23 October 2009 01:05:08   coppro -110zm (Lob)
+                           Pavitra -250zm
+                           coppro  +250zm [play Lob.]
 26 October 2009 19:46:08   BobTHJ -80zm (DyW)
 27 October 2009 00:55:09   comex -110zm (KB)
 27 October 2009 17:39:10   Tiger +55zm (DuM)
@@ -207,6 +210,9 @@ History:
                            coppro +34zm [7c, 8c]
 01 November 2009 01:12:31  woggle -34zm
                            coppro +34zm [7c, 8c]
+05 November 2009 06:35:03  Warrigal +215zm (OtN, 2*YT, DuM)
+                                     -64zm (0c, 2*3c, 9c)
+                                     +86zm (2c, 6c)
 
 ===============================================================================
 
