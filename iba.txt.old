@@ -13,7 +13,7 @@ Nickname                      zm
 ---------------------------------
 ais523                       500
 BobTHJ                       759
-*comex                       196
+*comex                        16
 *coppro                      933
 Darth Cliche                 500
 *Murphy                      460
@@ -70,7 +70,7 @@ WRV             130
 -- Cards (Government)
 Debate-o-Matic  50            4
 On the Nod      15            12
-Kill Bill       30            7
+Kill Bill       30            1
 No Confidence   100           3
 Extra Vote      58
 Local Election  40
@@ -210,6 +210,7 @@ History:
                            coppro +34zm [7c, 8c]
 01 November 2009 01:12:31  woggle -34zm
                            coppro +34zm [7c, 8c]
+04 November 2009 03:08:03  comex -180zm (6*KB)
 05 November 2009 06:35:03  Warrigal +215zm (OtN, 2*YT, DuM)
                                      -64zm (0c, 2*3c, 9c)
                                      +86zm (2c, 6c)
