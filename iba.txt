@@ -13,8 +13,8 @@ Nickname                      zm
 ---------------------------------
 ais523                       500
 BobTHJ                       759
-*comex                       386
-*coppro                      934
+*comex                       828
+*coppro                      864
 Darth Cliche                 500
 *Murphy                      460
 *Pavitra                     399
@@ -65,21 +65,21 @@ asset           rate (zm)    # in bank
 8 Crop          12
 9 Crop          11            21
 X Crop          100           24
-WRV             130
+WRV             130           4
 
 -- Cards (Government)
-Debate-o-Matic  50            7
-On the Nod      15            16
-Kill Bill       30            4
-No Confidence   100           7
-Extra Vote      58
-Local Election  40            3
-Cross the Lobby 30            3
-Goverment Ball  500           1
+Debate-o-Matic  50            8
+On the Nod      15            8
+Kill Bill       30            6
+No Confidence   100           5
+Extra Vote      58            1
+Local Election  40            2
+Cross the Lobby 30            2
+Goverment Ball  500
 
 -- Cards (Change)
-Distrib-u-Matic 90            2
-Committee       35            4
+Distrib-u-Matic 90            4
+Committee       35            6
 Your Turn       55            2
 Presto!         500
 Not Your Turn   275
@@ -88,12 +88,12 @@ Shrink Potion   55
 Change Ball     500
 
 -- Cards (Justice)
-Absolv-o-Matic  115
-Stool Pigeon    65
-Drop your Wea.. 100           1
+Absolv-o-Matic  115           4
+Stool Pigeon    65            6
+Drop your Wea.. 100           11
 Discard Picking 30
-Justice Ball    500
-Penalty Box     200
+Justice Ball    500           2
+Penalty Box     200           1
 Dunce Cap       0
 
 * Drop your Wea.. = Drop your Weapon
@@ -220,9 +220,20 @@ History:
 23 November 2009 00:01:06  Pavitra +40zm (OtN, SM)
 23 November 2009 00:17:06  coppro -25zm (SM)
 29 November 2009 09:42:07  Tiger +591zm (2*Com, 3*CtL, 3*DoM, 2*DyW,
-                                          3*EV, 3*KB, 3*LE, NC, 3*OtN)
+                                         3*EV, 3*KB, 3*LE, NC, 3*OtN)
 29 November 2009 20:04:09  coppro -174zm (3*EV)
 29 November 2009 20:54:09  coppro -100zm (DyW)
+01 December 2009 06:28:31  [IBA -2*Com, 8*OtN, 2*DyW, 3*DoM, DuM, CtL,
+                                 2*LE, 5*KB, 3*NC] [audit]
+[unknown time]             [IBA +2*AoM, 2*DyW, 6*KB
+                                -OtN]
+01 December 2009 12:09:03  comex +442zm (OtN, 3*DP, KB, 4*Com, LE,
+                                         4*DoM, EV, 6*St.P, 3*DuM,
+                                         10*DyW, NC, 2*AoM, PB,
+                                         2*J.Ball)
+01 December 2009 15:33:02  coppro -500zm (G.Ball)
+01 December 2009 20:14:03  coppro +520zm (4*WRV)
+01 December 2009 23:58:03  coppro -90zm (3*DP)
 
 ===============================================================================
 

@@ -62,6 +62,7 @@ abbrevs = {
 abbrevs2 =  dict(((v, k) for k, v in abbrevs.items()))
 iba_txt_file = 'iba.txt'
 iba_txt_format = 2
+default_end_date = None
 
 class iba_report:
     DELIM = '\n\n===============================================================================\n\n'
@@ -167,18 +168,20 @@ All IBA parties are listed.  All other persons have no zm.
             p = 1
             q = n[0]
         if translate: q = abbrevs2.get(q, q)
+        assert q != ''
         return p, q
 
     @staticmethod
     def get_monday(day):
         return (day - datetime.timedelta(days=day.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
 
-    def parse_history(self, limit=True, want_actions=False, want_holdings=False):
-        if limit:
-            monday = datetime.datetime.utcnow()
-            monday = self.get_monday(datetime.datetime.utcnow())
-        else:
-            monday = None
+    def parse_history(self, start_limit='monday', end_limit='default', want_actions=False, want_holdings=False):
+        if start_limit == 'monday':
+            start_limit = self.get_monday(datetime.datetime.utcnow())
+        if end_limit == 'default':
+            end_limit = default_end_date
+        monday = None
+
         if want_actions:
             actions = []
         elif want_holdings:
@@ -188,7 +191,6 @@ All IBA parties are listed.  All other persons have no zm.
         when = None
 
         history = self.history
-        history = re.sub('\[[^\]]+\]', lambda a: ' ' * len(a.group(0)), history)
 
         for line in history.split('\n'):
             if line.startswith('*'): continue
@@ -198,9 +200,12 @@ All IBA parties are listed.  All other persons have no zm.
                 a, b = line[:27].strip(), line[27:].strip()
             if a != '' and a != 'History:' and '[' not in a:
                 when = datetime.datetime.strptime(a, self.datefmt)
+                if end_limit and when > end_limit: break
                 hist += '@' + a + '\n'
-            if b != '' and (not limit or when >= monday):
-                hist += b + '\n' 
+            if b != '' and (not start_limit or when >= start_limit):
+                hist += b + '\n'
+        if want_holdings: ibapm = re.findall(re.compile('\[IBA ([^\]]*)\]', re.S), hist)
+        hist = re.sub(re.compile('^\[[^\]]+\]', re.M | re.S), '', hist)
         hist = hist.replace(',\n', ', ')
         hist = hist.replace(' +', '\n+')
         hist = hist.replace(' -', '\n-')
@@ -210,11 +215,10 @@ All IBA parties are listed.  All other persons have no zm.
             if line == '' or line[0] == '[': continue
             if line[0] == '@':
                 when = datetime.datetime.strptime(line[1:], self.datefmt)
-                if not limit:
-                    mon = self.get_monday(when)
-                    if mon != monday:
-                        prev = {}
-                        monday = mon
+                mon = self.get_monday(when)
+                if mon != monday:
+                    prev = {}
+                    monday = mon
                 continue
             if line[0] == '+' or ((want_holdings or want_actions) and line[0] == '-'):
                 if want_actions:
@@ -241,13 +245,15 @@ All IBA parties are listed.  All other persons have no zm.
         if want_actions:
             return actions
         elif want_holdings:
-            for m in re.findall(re.compile('\[IBA ([^\]]*)\]', re.S), self.history):
+            for m in ibapm:
                 mms = re.split('([\+-])', m)
                 for i in xrange(1, len(mms), 2):
                     sign = mms[i]
                     assert sign in ('-', '+')
                     mm = mms[i+1]
                     for mmm in re.split('[ ,]+', mm.strip()):
+                        mmm = mmm.strip()
+                        if mmm == '': continue
                         p, q = self.parse_times(mmm, True)
                         holdings[q] = holdings.get(q, 0) + (-1 if sign == '-' else 1) * p
             return holdings
@@ -281,7 +287,7 @@ All IBA parties are listed.  All other persons have no zm.
                 ast = ast.split('*')
                 ii, ast = int(ast[0]), ast[1].strip()
             stuff.append((ii, ast))
-        for ii, ast in (sorted(stuff, key=lambda (a, b): b) if sorted_mode else stuff):
+        for ii, ast in (sorted(stuff, key=lambda (a, b): self.lookup_rate(abbrevs2.get(b, b))) if sorted_mode else stuff):
             if ii > 1:
                 sore.append('%d*%s' % (ii, abbrevs.get(ast, ast)))
             else:
@@ -312,7 +318,7 @@ All IBA parties are listed.  All other persons have no zm.
         max_total_length = max(len(a[0]) for a in self.totals)
         for total, sore in self.totals:
             total = (' ' * (max_total_length - len(total))) + total
-            b = 28 + len(self.person) + 1 + len(total) + 2
+            b = 27 + len(self.person) + 1 + len(total) + 2
             c = ' ' * b
             sores.append(total + ' (' + wrap(', '.join(sore), 70 - b).replace('\n', '\n' + c) + ')')
 
@@ -361,7 +367,7 @@ def main_agdump():
 def main_rehash():
     report = iba_report()
     report.read_all()
-    actions = report.parse_history(limit=False, want_actions=True)
+    actions = report.parse_history(start_limit=False, want_actions=True)
     zm = {}
     N = 28 # skip old transactions which had different rates
     for actor, amt, stuff, prev in actions:
@@ -399,10 +405,17 @@ def main_rehash():
     assert N == 0
     assert zm == report.holdings
 
+def main_rehash3():
+    report = iba_report()
+    report.read_all()
+    holdings = report.parse_history(start_limit=False, want_holdings=True)
+    for a, b in sorted(holdings.items(), key=lambda (a, b): a[0]):
+        print a.ljust(20), b
+
 def main_rehash2():
     report = iba_report()
     report.read_all()
-    holdings = report.parse_history(limit=False, want_holdings=True)
+    holdings = report.parse_history(start_limit=None, want_holdings=True)
     for a in report.rates:
         if type(a) == list:
             ast = a[0]
@@ -423,8 +436,10 @@ if __name__ == '__main__':
     parser.add_option("--agdump", action="store_const", dest="mode", const="agdump")
     parser.add_option("--rehash", action="store_const", dest="mode", const="rehash")
     parser.add_option("--rehash2", action="store_const", dest="mode", const="rehash2")
+    parser.add_option("--rehash3", action="store_const", dest="mode", const="rehash3")
 
     parser.add_option("-d", "--dry-run", action="store_true", dest="dry", default=False)
+    parser.add_option("-e", "--default-end-date", dest="default_end_date", default=None)
     parser.add_option("-n", "--no-change", action="store_true", dest="nochange", default=False)
 
     parser.add_option("-f", "--file", action="store", type="string", dest="filename", default="iba.txt")
@@ -434,6 +449,8 @@ if __name__ == '__main__':
 
     iba_txt_file = options.filename
     iba_txt_format = options.format
+    if options.default_end_date:
+        default_end_date = datetime.datetime.strptime(options.default_end_date, iba_report.datefmt)
     
     if options.mode == 'agi':
         main_agi(options.dry, options.nochange)
@@ -443,4 +460,6 @@ if __name__ == '__main__':
         main_rehash()
     elif options.mode == 'rehash2':
         main_rehash2()
+    elif options.mode == 'rehash3':
+        main_rehash3()
     else: raise
