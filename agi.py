@@ -409,8 +409,15 @@ def main_rehash3():
     report = iba_report()
     report.read_all()
     holdings = report.parse_history(start_limit=False, want_holdings=True)
-    for a, b in sorted(holdings.items(), key=lambda (a, b): a[0]):
-        print a.ljust(20), b
+    for a in holdings.keys():
+        try:
+            report.lookup_rate(a)
+        except KeyError:
+            del holdings[a]
+    for a, b in sorted(holdings.items(), key=lambda (a, b): a):
+        if b != 0:
+            print a.ljust(20), b
+    print 'Total cards:', sum(b for (a, b) in holdings.items() if 'Crop' not in a and 'WRV' not in a)
 
 def main_rehash2():
     report = iba_report()
