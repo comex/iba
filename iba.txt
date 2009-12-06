@@ -13,7 +13,7 @@ Nickname                      zm
 ---------------------------------
 ais523                       500
 BobTHJ                       759
-*comex                       791
+*comex                       701
 *coppro                      746
 Darth Cliche                 500
 *Murphy                      460
@@ -78,7 +78,7 @@ Cross the Lobby 30            2
 Goverment Ball  500
 
 -- Cards (Change)
-Distrib-u-Matic 90            1
+Distrib-u-Matic 90
 Committee       35            5
 Your Turn       55
 Presto!         500
@@ -238,6 +238,7 @@ History:
 02 December 2009 01:14:04  coppro -58zm (EV)
 06 December 2009 12:23:03  Walker +260zm (2*WRV)
                                   -215zm (2*DuM, Com)
+06 December 2009 23:16:03  comex -90zm (DuM)
 
 ===============================================================================
 
