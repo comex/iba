@@ -14,7 +14,7 @@ Nickname                      zm
 ais523                       500
 BobTHJ                       759
 *comex                       791
-*coppro                      804
+*coppro                      746
 Darth Cliche                 500
 *Murphy                      460
 *Pavitra                     399
@@ -72,7 +72,7 @@ Debate-o-Matic  50            8
 On the Nod      15            8
 Kill Bill       30            6
 No Confidence   100           5
-Extra Vote      58            1
+Extra Vote      58
 Local Election  40            2
 Cross the Lobby 30            2
 Goverment Ball  500
@@ -80,7 +80,7 @@ Goverment Ball  500
 -- Cards (Change)
 Distrib-u-Matic 90            3
 Committee       35            6
-Your Turn       55            2
+Your Turn       55
 Presto!         500
 Not Your Turn   275
 Supersize Me    25
@@ -90,10 +90,10 @@ Change Ball     500
 -- Cards (Justice)
 Absolv-o-Matic  115           6
 Stool Pigeon    65            7
-Drop your Wea.. 100           10
+Drop your Wea.. 100           8
 Discard Picking 30
 Justice Ball    500           2
-Penalty Box     200           1
+Penalty Box     200           2
 Dunce Cap       0
 
 * Drop your Wea.. = Drop your Weapon
@@ -222,19 +222,20 @@ History:
 29 November 2009 09:42:07  Tiger +591zm (2*Com, 3*CtL, 3*DoM, 2*DyW,
                                          3*EV, 3*KB, 3*LE, NC, 3*OtN)
 29 November 2009 23:12:56  [IBA +2*AoM, DyW, 6*KB
-                                -DuM, Lob, OtN] [self-rat]
+                                -DuM, Lob, OtN, 2*YT] [self-rat]
 29 November 2009 20:04:09  coppro -174zm (3*EV)
 29 November 2009 20:54:09  coppro -100zm (DyW)
 01 December 2009 06:28:31  [IBA -2*Com, 8*OtN, 2*DyW, 3*DoM, DuM, CtL,
                                  2*LE, 5*KB, 3*NC] [audit]
 01 December 2009 12:09:03  comex +405zm (OtN, 5*DP, KB, 4*Com, LE,
                                          4*DoM, EV, 7*St.P, 3*DuM,
-                                         10*DyW, NC, 4*AoM, PB,
+                                         8*DyW, NC, 4*AoM, 2*PB,
                                          2*J.Ball)
 01 December 2009 15:33:02  coppro -500zm (G.Ball)
 01 December 2009 20:14:03  coppro +520zm (4*WRV)
 01 December 2009 23:58:03  coppro -90zm (3*DP)
 02 December 2009 01:12:03  coppro -60zm (2*DP)
+02 December 2009 01:14:04  coppro -58zm (EV)
 
 ===============================================================================
 

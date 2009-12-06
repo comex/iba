@@ -21,7 +21,7 @@ Darth Cliche                 500
 PBA                           28
 *Taral                       378
 *Tiger                       843
-*Walker                      840
+*Walker                      885
 Warrigal                     237
 *woggle                      379
 Wooble                         2
@@ -65,7 +65,7 @@ asset           rate (zm)    # in bank
 8 Crop          12
 9 Crop          11            21
 X Crop          100           24
-WRV             130           4
+WRV             130           6
 
 -- Cards (Government)
 Debate-o-Matic  50            8
@@ -78,8 +78,8 @@ Cross the Lobby 30            2
 Goverment Ball  500
 
 -- Cards (Change)
-Distrib-u-Matic 90            3
-Committee       35            6
+Distrib-u-Matic 90            1
+Committee       35            5
 Your Turn       55
 Presto!         500
 Not Your Turn   275
@@ -236,6 +236,8 @@ History:
 01 December 2009 23:58:03  coppro -90zm (3*DP)
 02 December 2009 01:12:03  coppro -60zm (2*DP)
 02 December 2009 01:14:04  coppro -58zm (EV)
+06 December 2009 12:23:03  Walker +260zm (2*WRV)
+                                  -215zm (2*DuM, Com)
 
 ===============================================================================
 
