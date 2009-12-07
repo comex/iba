@@ -13,7 +13,7 @@ Nickname                      zm
 ---------------------------------
 ais523                       500
 BobTHJ                       759
-*comex                       701
+*comex                        11
 *coppro                      246
 Darth Cliche                 500
 *Murphy                      460
@@ -88,7 +88,7 @@ Shrink Potion   55
 Change Ball     500
 
 -- Cards (Justice)
-Absolv-o-Matic  115           6
+Absolv-o-Matic  115
 Stool Pigeon    65            7
 Drop your Wea.. 100           8
 Discard Picking 30
@@ -240,6 +240,7 @@ History:
                                   -215zm (2*DuM, Com)
 06 December 2009 23:16:03  comex -90zm (DuM)
 07 December 2009 23:17:09  coppro -500zm (J.Ball)
+08 December 2009 00:18:05  comex -690zm (6*AoM)
 
 ===============================================================================
 

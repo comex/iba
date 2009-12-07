@@ -13,7 +13,7 @@ Nickname                      zm
 ---------------------------------
 ais523                       500
 BobTHJ                       759
-*comex                        11
+*comex                       659
 *coppro                      246
 Darth Cliche                 500
 *Murphy                      460
@@ -60,11 +60,11 @@ asset           rate (zm)    # in bank
 3 Crop          21            10
 4 Crop          23
 5 Crop          27            8
-6 Crop          50            8
+6 Crop          50            19
 7 Crop          19            4
 8 Crop          12
 9 Crop          11            21
-X Crop          100           24
+X Crop          100           26
 WRV             130           6
 
 -- Cards (Government)
@@ -107,6 +107,7 @@ Medal           1500
 ===============================================================================
 
 History:
+*[Note: Some dates may be inaccurate.]
 
 03 June 2009 02:44:03      Pavitra +623zm (0c, 7*1c, 2*3c, 2*4c, 2*5c,
                                            2*6c, 7c, 3*8c, 13*9c, 4*Xc)
@@ -241,6 +242,7 @@ History:
 06 December 2009 23:16:03  comex -90zm (DuM)
 07 December 2009 23:17:09  coppro -500zm (J.Ball)
 08 December 2009 00:18:05  comex -690zm (6*AoM)
+08 December 2009 00:27:24  comex +648zm (2*Xc, 11*6c)
 
 ===============================================================================
 

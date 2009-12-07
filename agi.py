@@ -198,7 +198,7 @@ All IBA parties are listed.  All other persons have no zm.
                 a, b = line[:24].strip(), line[24:].strip()
             else:
                 a, b = line[:27].strip(), line[27:].strip()
-            if a != '' and a != 'History:' and '[' not in a:
+            if a != '' and a != 'History:' and '[' not in a and ']' not in a:
                 when = datetime.datetime.strptime(a, self.datefmt)
                 if end_limit and when > end_limit: break
                 hist += '@' + a + '\n'
