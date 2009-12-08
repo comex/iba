@@ -14,7 +14,7 @@ Nickname                      zm
 ais523                       500
 BobTHJ                       759
 *comex                       659
-*coppro                      246
+*coppro                      482
 Darth Cliche                 500
 *Murphy                      460
 *Pavitra                     399
@@ -79,7 +79,7 @@ Goverment Ball  500
 
 -- Cards (Change)
 Distrib-u-Matic 90
-Committee       35            5
+Committee       35            12
 Your Turn       55
 Presto!         500
 Not Your Turn   275
@@ -243,6 +243,7 @@ History:
 07 December 2009 23:17:09  coppro -500zm (J.Ball)
 08 December 2009 00:18:05  comex -690zm (6*AoM)
 08 December 2009 00:27:24  comex +648zm (2*Xc, 11*6c)
+08 December 2009 03:23:04  coppro +236zm (7*Com)
 
 ===============================================================================
 
